@@ -16,6 +16,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jakarta-regexp-1.4.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/janino-2.5.16.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/java-cup-0.11a.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.servlet-api-3.1.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jcl-over-slf4j-1.6.4.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jedis-2.0.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl-1.1.2.jar"/>
@@ -43,5 +44,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-webmvc-3.1.1.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard-1.1.2.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/weka-stable-3.6.8.jar"/>
+	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
