@@ -10,9 +10,4 @@ public class StatisticsTopicController {
 	public String statisticTopicSentiment() {
 		return "core/statistics";
 	}
-
-	@RequestMapping(value = "hello")
-	public void hello() {
-		System.out.println("hello");
-	}
 }

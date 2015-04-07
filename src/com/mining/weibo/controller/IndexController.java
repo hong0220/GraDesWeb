@@ -6,13 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-	@RequestMapping(value = "statistic")
+	@RequestMapping(value = "index")
 	public String statisticTopicSentiment() {
-		return "core/statistics";
+		return "core/index";
 	}
 
-	@RequestMapping(value = "hello")
-	public void hello() {
-		System.out.println("hello");
+	public void index() {
+
 	}
 }
