@@ -28,19 +28,13 @@ public class IndexController {
 	public void analyzer(HttpServletRequest request,
 			HttpServletResponse response, String input, String operatorType) {
 		System.out.println("analyzer");
-		System.out.println(input);
-		System.out.println(operatorType);
-	}
 
-	/*
-	 * @RequestMapping(value = "analyzer2") public void
-	 * analyzer2(HttpServletRequest request, HttpServletResponse response,
-	 * String input, String operatorType) { System.out.println("analyzer2");
-	 * System.out.println(input); System.out.println(operatorType); }
-	 * 
-	 * @RequestMapping(value = "analyzer3") public void
-	 * analyzer3(HttpServletRequest request, HttpServletResponse response,
-	 * String input, String operatorType) { System.out.println("analyzer3");
-	 * System.out.println(input); System.out.println(operatorType); }
-	 */
+		if ("1".equals(operatorType)) {
+			System.out.println(input);
+		} else if ("2".equals(operatorType)) {
+			System.out.println(input);
+		} else if ("3".equals(operatorType)) {
+			System.out.println(input);
+		}
+	}
 }

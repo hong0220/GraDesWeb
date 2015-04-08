@@ -45,22 +45,6 @@
         	setElementId('operType',1);
 
         	doSubAndFillResult(formId,urlAction,resultId);
-        }else if(inputId=="input_2"){
-        	//截取前指定的最大长度
-    		queryValue =queryValue.substr(0, max_query_length);
-    		
-        	setElementId('realInput',queryValue);
-        	setElementId('operType',2);
-
-        	doSubAndFillResult(formId,urlAction,resultId);
-        }else if(inputId=="input_3"){
-        	//截取前指定的最大长度
-    		queryValue =queryValue.substr(0, max_query_length);
-    		
-        	setElementId('realInput',queryValue);
-        	setElementId('operType',3);
-
-        	doSubAndFillResult(formId,urlAction,resultId);
         }
     }
 
@@ -84,8 +68,6 @@
 	function setDefaultValue(){
 		var defaultValue="1949年10月1日，中华人民共和国成立了，全球1/4的人口得到解放，百分之八十的耕地都给予农民，十几亿农民得到了实惠，120%的力气发展生产。";
 		setElementId("input_1",defaultValue);
-		setElementId("input_2",defaultValue);
-		setElementId("input_3",defaultValue);
 	}
 </script>
 </head>
@@ -133,7 +115,7 @@
 		</ul>
 		<div id="tabs-1" aria-labelledby="ui-id-1"
 			class="ui-tabs-panel ui-widget-content ui-corner-bottom"
-			role="tabpanel" aria-expanded="true" aria-hidden="false"
+			role="tabpanel" aria-expanded="true" aria-hidden="true"
 			style="display: block;">
 			<!-- 输入串 -->
 			<div style="text-align: center;">
@@ -152,48 +134,6 @@
 					style="border-style: solid; border-width: 2px; border-color: red; visibility: hidden; height: 150px;"></div>
 			</div>
 		</div>
-		<div id="tabs-2" aria-labelledby="ui-id-2"
-			class="ui-tabs-panel ui-widget-content ui-corner-bottom"
-			role="tabpanel" aria-expanded="false" aria-hidden="true"
-			style="display: none;">
-			<!-- 输入串 -->
-			<div style="text-align: center;">
-				<textarea id="input_2" rows="4" cols="50"
-					style="width: 100%; border-style: solid; border-width: 2px; border-color: orange; height: 100px;"></textarea>
-				<div style="margin: 20px;">
-					<span
-						onclick="doSub(&#39;onlineForm&#39;,&#39;input_&#39;,&#39;2&#39;)"
-						style="background-color: olive; font-size: 25px; font-weight: bold; padding: 15px; cursor: pointer;">提交</span>
-				</div>
-			</div>
-
-			<!-- 输出串-->
-			<div style="">
-				<div id="onlineResult_2"
-					style="border-style: solid; border-width: 2px; border-color: red; visibility: hidden; height: 150px;"></div>
-			</div>
-		</div>
-		<div id="tabs-3" aria-labelledby="ui-id-3"
-			class="ui-tabs-panel ui-widget-content ui-corner-bottom"
-			role="tabpanel" aria-expanded="false" aria-hidden="true"
-			style="display: none;">
-			<!-- 输入串 -->
-			<div style="text-align: center;">
-				<textarea id="input_3" rows="4" cols="50"
-					style="width: 100%; border-style: solid; border-width: 2px; border-color: orange; height: 100px;"></textarea>
-				<div style="margin: 20px;">
-					<span
-						onclick="doSub(&#39;onlineForm&#39;,&#39;input_&#39;,&#39;3&#39;)"
-						style="background-color: olive; font-size: 25px; font-weight: bold; padding: 15px; cursor: pointer;">提交</span>
-				</div>
-			</div>
-
-			<!-- 输出串-->
-			<div style="">
-				<div id="onlineResult_3"
-					style="border-style: solid; border-width: 2px; border-color: red; visibility: hidden; height: 150px;"></div>
-			</div>
-		</div>
 	</div>
 
 	<script type="text/javascript">
@@ -204,7 +144,6 @@
 	</script>
 	<script type="text/javascript">
 	function changeTab(obj) {
-		alert(obj);
 		window.location.href=obj;
 	}
 	</script>

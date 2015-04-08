@@ -37,28 +37,12 @@
 			return;
 		}
 		
-        if(inputId=="input_1"){
-        	//截取前指定的最大长度
-    		queryValue =queryValue.substr(0, max_query_length);
-    		
-        	setElementId('realInput',queryValue);
-        	setElementId('operType',1);
-
-        	doSubAndFillResult(formId,urlAction,resultId);
-        }else if(inputId=="input_2"){
+       if(inputId=="input_2"){
         	//截取前指定的最大长度
     		queryValue =queryValue.substr(0, max_query_length);
     		
         	setElementId('realInput',queryValue);
         	setElementId('operType',2);
-
-        	doSubAndFillResult(formId,urlAction,resultId);
-        }else if(inputId=="input_3"){
-        	//截取前指定的最大长度
-    		queryValue =queryValue.substr(0, max_query_length);
-    		
-        	setElementId('realInput',queryValue);
-        	setElementId('operType',3);
 
         	doSubAndFillResult(formId,urlAction,resultId);
         }
@@ -82,14 +66,12 @@
 
 	//给每个文本框架置默认置
 	function setDefaultValue(){
-		var defaultValue="1949年10月1日，中华人民共和国成立了，全球1/4的人口得到解放，百分之八十的耕地都给予农民，十几亿农民得到了实惠，120%的力气发展生产。";
-		setElementId("input_1",defaultValue);
+		var defaultValue="现代的辅助技术能够识别并朗读由 CSS 生成的内容和特定的 Unicode 字符。为了避免 屏幕识读设备抓取非故意的和可能产生混淆的输出内容（尤其是当图标纯粹作为装饰用途时），我们为这些图标设置了 属性。";
 		setElementId("input_2",defaultValue);
-		setElementId("input_3",defaultValue);
 	}
 </script>
 </head>
-<body onload="doFocus(&#39;input_1&#39;)">
+<body onload="doFocus(&#39;input_2&#39;)">
 	<!-- 遮罩层 -->
 	<div id="loading"
 		style="top: 0px; left: 0px; height: 100%; width: 100%; z-index: 999; opacity: 0.6; font-size: 14px; line-height: 20px; position: fixed !important; display: none; background: url(http://www.yuqing36524.com:8888/EntityEvalPlatform/images/loading.gif) 50% 50% no-repeat rgb(0, 0, 0);">
@@ -114,15 +96,15 @@
 		<ul
 			class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
 			role="tablist">
-			<li class="ui-state-default ui-corner-top" role="tab" tabindex="0"
+			<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1"
 				aria-controls="tabs-1" aria-labelledby="ui-id-1"
-				aria-selected="true"><a onclick="changeTab('index')"
+				aria-selected="false"><a onclick="changeTab('index')"
 				class="ui-tabs-anchor" role="presentation" tabindex="-1"
 				id="ui-id-1">分词</a></li>
 			<li
 				class="ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-focus"
-				role="tab" tabindex="-1" aria-controls="tabs-2"
-				aria-labelledby="ui-id-2" aria-selected="false"><a
+				role="tab" tabindex="0" aria-controls="tabs-2"
+				aria-labelledby="ui-id-2" aria-selected="true"><a
 				class="ui-tabs-anchor" role="presentation" tabindex="-1"
 				id="ui-id-2">词性标注</a></li>
 			<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1"
@@ -131,31 +113,10 @@
 				class="ui-tabs-anchor" role="presentation" tabindex="-1"
 				id="ui-id-3">情感正负性</a></li>
 		</ul>
-		<div id="tabs-1" aria-labelledby="ui-id-1"
+		<div id="tabs-2" aria-labelledby="ui-id-2"
 			class="ui-tabs-panel ui-widget-content ui-corner-bottom"
 			role="tabpanel" aria-expanded="true" aria-hidden="false"
 			style="display: block;">
-			<!-- 输入串 -->
-			<div style="text-align: center;">
-				<textarea id="input_1" rows="4" cols="50"
-					style="width: 100%; border-style: solid; border-width: 2px; border-color: orange; height: 100px;"></textarea>
-				<div style="margin: 20px;">
-					<span
-						onclick="doSub(&#39;onlineForm&#39;,&#39;input_&#39;,&#39;1&#39;)"
-						style="background-color: olive; font-size: 25px; font-weight: bold; padding: 15px; cursor: pointer;">提交</span>
-				</div>
-			</div>
-
-			<!-- 输出串-->
-			<div style="">
-				<div id="onlineResult_1"
-					style="border-style: solid; border-width: 2px; border-color: red; visibility: hidden; height: 150px;"></div>
-			</div>
-		</div>
-		<div id="tabs-2" aria-labelledby="ui-id-2"
-			class="ui-tabs-panel ui-widget-content ui-corner-bottom"
-			role="tabpanel" aria-expanded="false" aria-hidden="true"
-			style="display: none;">
 			<!-- 输入串 -->
 			<div style="text-align: center;">
 				<textarea id="input_2" rows="4" cols="50"
@@ -173,31 +134,10 @@
 					style="border-style: solid; border-width: 2px; border-color: red; visibility: hidden; height: 150px;"></div>
 			</div>
 		</div>
-		<div id="tabs-3" aria-labelledby="ui-id-3"
-			class="ui-tabs-panel ui-widget-content ui-corner-bottom"
-			role="tabpanel" aria-expanded="false" aria-hidden="true"
-			style="display: none;">
-			<!-- 输入串 -->
-			<div style="text-align: center;">
-				<textarea id="input_3" rows="4" cols="50"
-					style="width: 100%; border-style: solid; border-width: 2px; border-color: orange; height: 100px;"></textarea>
-				<div style="margin: 20px;">
-					<span
-						onclick="doSub(&#39;onlineForm&#39;,&#39;input_&#39;,&#39;3&#39;)"
-						style="background-color: olive; font-size: 25px; font-weight: bold; padding: 15px; cursor: pointer;">提交</span>
-				</div>
-			</div>
-
-			<!-- 输出串-->
-			<div style="">
-				<div id="onlineResult_3"
-					style="border-style: solid; border-width: 2px; border-color: red; visibility: hidden; height: 150px;"></div>
-			</div>
-		</div>
 	</div>
 
 	<script type="text/javascript">
-	  //实际去给每个文本框默认值
+	   //实际去给每个文本框默认值
 	   setDefaultValue();
 	   //关掉遮罩层
 	   turnoff('loading');
