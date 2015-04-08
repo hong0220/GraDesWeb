@@ -3,33 +3,33 @@ package com.mining.weibo.model;
 import java.util.Date;
 
 public class Stock {
-    private Integer id;
+	private Integer id;
 
-    private Date day;
+	private Date day;
 
-    private Float amount;
+	private Float amount;
 
-    public Integer getId() {
-        return id;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public Date getDay() {
-        return day;
-    }
+	public Date getDay() {
+		return day;
+	}
 
-    public void setDay(Date day) {
-        this.day = day;
-    }
+	public void setDay(Date day) {
+		this.day = day;
+	}
 
-    public Float getAmount() {
-        return amount;
-    }
+	public Float getAmount() {
+		return amount;
+	}
 
-    public void setAmount(Float amount) {
-        this.amount = amount;
-    }
+	public void setAmount(Float amount) {
+		this.amount = amount;
+	}
 }
