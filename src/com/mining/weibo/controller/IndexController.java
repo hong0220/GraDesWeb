@@ -11,7 +11,7 @@ public class IndexController {
 		return "core/index";
 	}
 
-	public void index() {
+	public void analyzer() {
 
 	}
 }

@@ -1,5 +1,7 @@
 package com.mining.weibo.dao.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +22,10 @@ public class WeiboDaoImpl implements WeiboDaoI {
 	public Weibo get() {
 		System.out.println("get");
 		return wm.selectByPrimaryKey(7722);
+	}
+
+	@Override
+	public List<Weibo> get(String userId, Integer page, Integer size) {
+		return null;
 	}
 }
