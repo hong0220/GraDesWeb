@@ -28,7 +28,6 @@ public class IndexController {
 	public void analyzer(HttpServletRequest request,
 			HttpServletResponse response, String input, String operatorType) {
 		System.out.println("analyzer");
-
 		if ("1".equals(operatorType)) {
 			System.out.println(input);
 		} else if ("2".equals(operatorType)) {
