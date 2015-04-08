@@ -1,10 +1,19 @@
 package com.mining.weibo.controller;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.LinkedList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.fjnu.model.EmotionValues;
+import com.fjnu.utils.EmotionAnalysis;
+import com.fjnu.utils.LoadData;
+import com.hyh.utils.MyAnalyzer;
 
 @Controller
 public class IndexController {
@@ -26,14 +35,31 @@ public class IndexController {
 
 	@RequestMapping(value = "analyzer")
 	public void analyzer(HttpServletRequest request,
-			HttpServletResponse response, String input, String operatorType) {
+			HttpServletResponse response, String input, String operatorType)
+			throws IOException {
 		System.out.println("analyzer");
-		if ("1".equals(operatorType)) {
-			System.out.println(input);
-		} else if ("2".equals(operatorType)) {
-			System.out.println(input);
-		} else if ("3".equals(operatorType)) {
-			System.out.println(input);
+		if (operatorType.equals("1")) {
+			LinkedList<String> list = MyAnalyzer.IK_Analyzer(input);
+			StringBuffer sb = new StringBuffer();
+			for (String str : list) {
+				sb.append(str + " ");
+			}
+			response.getWriter().write(sb.toString());
+		} else if (operatorType.equals("3")) {
+			// 加载词库数据到HashMap
+			HashMap<String, Integer> map = new HashMap<String, Integer>();
+			new LoadData(map).dataToMap3();
+			EmotionValues ev = new EmotionValues();
+			EmotionAnalysis.compute(map, input, ev);
+			if (ev.getPositiveValues() > Math.abs(ev.getNegativeValues())) {
+				response.getWriter().write("积极情感");
+			} else if (ev.getPositiveValues() < Math
+					.abs(ev.getNegativeValues())) {
+				response.getWriter().write("消极情感");
+			} else if (ev.getPositiveValues() == Math.abs(ev
+					.getNegativeValues())) {
+				response.getWriter().write("中性情感");
+			}
 		}
 	}
 }

@@ -2,6 +2,7 @@
     <wb-module deploy-name="GraDesWeb">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/" source-path="/resources"/>
+        <wb-resource deploy-path="/" source-path="/core"/>
         <property name="context-root" value="GraDesWeb"/>
         <property name="java-output-path" value="/GraDesWeb/build/classes"/>
     </wb-module>
