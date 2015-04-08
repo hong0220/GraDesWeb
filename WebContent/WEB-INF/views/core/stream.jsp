@@ -25,59 +25,6 @@
 					<a href="http://www.phplearn.cn/" target="_blank">点击查看>>></a>
 				</div>
 			</div>
-			<div class="grid">
-				<div class="imgholder"></div>
-				<strong>作品2</strong>
-				<p>网友czqn8分享jquery实现图片翻牌旋转特效|jqueryschool-插件教程分享
-					首先非常感谢网友czqn8的无私分享，此作品是他在逛乐蜂网站时看效果比较实用就把它整理出来第一时间与大家分享了，主要功能是jquery配合动画插件animate实现图片翻牌旋转特效，当鼠标悬浮到图片上的时候就实</p>
-				<div class="meta">
-					<a href="http://www.phplearn.cn/" target="_blank">点击查看>>></a>
-				</div>
-			</div>
-			<div class="grid">
-				<div class="imgholder"></div>
-				<strong>作品3</strong>
-				<p>网友涛涛分享原生js实现美女拼图游戏特效|jqueryschool-插件教程分享</p>
-				<div class="meta">
-					<a href="http://www.phplearn.cn/" target="_blank">点击查看>>></a>
-				</div>
-			</div>
-			<div class="grid">
-				<div class="imgholder"></div>
-				<strong>作品4</strong>
-				<p>分享一款简洁大气的jquery时间轴特效|jqueryschool-插件教程分享
-					此作品是一款非常实用的jquery特效，实现了时间轴效果，应用场景很广，最适合用于描述公司成长历程，可以列出哪年、哪月、哪日公司的发展经历，整体看来非常简洁大气，以年份做为节点，具体内容作为二级节点，可</p>
-				<div class="meta">
-					<a href="http://www.phplearn.cn/" target="_blank">点击查看>>></a>
-				</div>
-			</div>
-			<div class="grid">
-				<div class="imgholder"></div>
-				<strong>作品5</strong>
-				<p>网友涛涛原创js仿jquery-lightBox插件(修正v1.0)|jqueryschool-插件教程分享
-					首先非常感谢网友涛涛的无私分享，此作品是他的上款作品（网友涛涛原创js仿jquery-lightBox插件）的修正版本，修正了以下6个内容：1、使用更简单。2、修改鼠标放大作用。3、改为面向对象。4、添加重置</p>
-				<div class="meta">
-					<a href="http://www.phplearn.cn/" target="_blank">点击查看>>></a>
-				</div>
-			</div>
-			<div class="grid">
-				<div class="imgholder"></div>
-				<strong>作品6</strong>
-				<p>网友沙叶分享Jquery-UI实现Web桌面系统jWebOS|jqueryschool-插件教程分享
-					首先非常感谢网友沙叶的无私分享，同时也非常感谢对这个作品做二次开发的网友们，此Web桌面系统Jquery特效是JquerySchool网站的第三款类似的作品了，每一款都有不同的特色，此作品利用了Jquery-UI实现Web</p>
-				<div class="meta">
-					<a href="http://www.phplearn.cn/" target="_blank">点击查看>>></a>
-				</div>
-			</div>
-			<div class="grid">
-				<div class="imgholder"></div>
-				<strong>作品7</strong>
-				<p>分享jquery实现仿flash圆盘抽奖特效|jqueryschool-插件教程分享
-					最近jquery学堂群里面的很多网友要求分享一个用jquery实现类似flash圆盘的抽奖的特效出来，一直没有网友们分享，今天刚好看到360搜索搞活的页面有抽奖特效，于是就将它整理出来第一时间分享给大家参考用，虽然有点</p>
-				<div class="meta">
-					<a href="http://www.phplearn.cn/" target="_blank">点击查看>>></a>
-				</div>
-			</div>
 		</div>
 	</div>
 

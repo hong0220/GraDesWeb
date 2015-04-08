@@ -17,7 +17,6 @@ public class WeiboServiceImpl implements WeiboServiceI {
 
 	@Override
 	public List<Weibo> get(String userId, Integer page, Integer size) {
-		System.out.println("get");
 		return wd.get(userId, page, size);
 	}
 }

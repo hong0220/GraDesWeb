@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.mining.weibo.dao.WeiboDaoI;
 import com.mining.weibo.model.Weibo;
+import com.mining.weibo.model.WeiboExample;
 import com.mining.weibo.model.WeiboMapper;
 
 @Repository
@@ -17,8 +18,7 @@ public class WeiboDaoImpl implements WeiboDaoI {
 
 	@Override
 	public List<Weibo> get(String userId, Integer page, Integer size) {
-		System.out.println("get");
-		return null;
+		return wm.selectByExample(new WeiboExample());
 	}
 
 	@Override
