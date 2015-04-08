@@ -16,13 +16,8 @@ public class WeiboDaoImpl implements WeiboDaoI {
 	public WeiboMapper wm;
 
 	@Override
-	public Weibo get() {
-		System.out.println("get");
-		return wm.selectByPrimaryKey(7722);
-	}
-
-	@Override
 	public List<Weibo> get(String userId, Integer page, Integer size) {
+		System.out.println("get");
 		return null;
 	}
 
