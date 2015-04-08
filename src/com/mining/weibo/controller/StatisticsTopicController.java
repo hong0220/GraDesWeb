@@ -8,6 +8,6 @@ public class StatisticsTopicController {
 
 	@RequestMapping(value = "statistic")
 	public String statisticTopicSentiment() {
-		return "core/statistics";
+		return "core/statistic";
 	}
 }
