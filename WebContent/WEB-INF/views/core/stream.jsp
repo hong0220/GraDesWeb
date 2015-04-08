@@ -1,11 +1,16 @@
-﻿<html>
+﻿<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>响应式jquery瀑布流结合图片延迟加载特效</title>
-<link rel='stylesheet' href='style.css' media='screen' />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
-<script type="text/javascript" src="js/blocksit.min.js"></script>
+<link rel='stylesheet' href="${ctx}/resource/css/style.css"
+	media='screen' />
+<script type="text/javascript" src="${ctx}/resource/js/jquery.min.js"></script>
+<script type="text/javascript"
+	src="${ctx}/resource/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="${ctx}/resource/js/blocksit.min.js"></script>
 </head>
 <body>
 	<div id="wrapper">

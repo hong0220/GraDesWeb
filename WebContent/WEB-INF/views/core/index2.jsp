@@ -1,13 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>在线测试-分词、标注、情感正负面</title>
-<script type="text/javascript" src="resource/js/jquery.min.js"></script>
-<script type="text/javascript" src="resource/js/jquery-ui.js"></script>
+<script type="text/javascript" src="${ctx}/resource/js/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx}/resource/js/jquery-ui.js"></script>
 <!-- 公共js -->
-<script type="text/javascript" src="resource/js/common.js"></script>
-<link rel="stylesheet" href="resource/css/jquery-ui.css">
+<script type="text/javascript" src="${ctx}/resource/js/common.js"></script>
+<link rel="stylesheet" href="${ctx}/resource/css/jquery-ui.css">
 <script>
 	$(function() {
 		$("#tabs").tabs();
