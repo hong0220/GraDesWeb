@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>在线测试-分词、标注、情感正负面</title>
-<script type="text/javascript" src="resource/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="resource/js/jquery.min.js"></script>
 <script type="text/javascript" src="resource/js/jquery-ui.js"></script>
 <!-- 公共js -->
 <script type="text/javascript" src="resource/js/common.js"></script>
@@ -105,9 +105,8 @@
 
 	<!--隐藏的form表单定义 -->
 	<form id="onlineForm" style="visibility: hidden;">
-		<input id="realInput" type="hidden" name="onlineTestPojo.input"
-			value=""> <input id="operType" type="hidden"
-			name="onlineTestPojo.operatorType" value="">
+		<input id="realInput" type="hidden" name="input" value=""> <input
+			id="operType" type="hidden" name="operatorType" value="">
 	</form>
 
 	<div id="tabs"
@@ -118,17 +117,19 @@
 			<li
 				class="ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-focus"
 				role="tab" tabindex="0" aria-controls="tabs-1"
-				aria-labelledby="ui-id-1" aria-selected="true"><a href="#"
+				aria-labelledby="ui-id-1" aria-selected="true"><a
 				class="ui-tabs-anchor" role="presentation" tabindex="-1"
 				id="ui-id-1">分词</a></li>
 			<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1"
 				aria-controls="tabs-2" aria-labelledby="ui-id-2"
-				aria-selected="false"><a href="index2" class="ui-tabs-anchor"
-				role="presentation" tabindex="-1" id="ui-id-2">词性标注</a></li>
+				aria-selected="false"><a onclick="changeTab('index2')"
+				class="ui-tabs-anchor" role="presentation" tabindex="-1"
+				id="ui-id-2">词性标注</a></li>
 			<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1"
 				aria-controls="tabs-3" aria-labelledby="ui-id-3"
-				aria-selected="false"><a href="index3" class="ui-tabs-anchor"
-				role="presentation" tabindex="-1" id="ui-id-3">情感正负性</a></li>
+				aria-selected="false"><a onclick="changeTab('index3')"
+				class="ui-tabs-anchor" role="presentation" tabindex="-1"
+				id="ui-id-3">情感正负性</a></li>
 		</ul>
 		<div id="tabs-1" aria-labelledby="ui-id-1"
 			class="ui-tabs-panel ui-widget-content ui-corner-bottom"
@@ -200,6 +201,12 @@
 	   setDefaultValue();
 	   //关掉遮罩层
 	   turnoff('loading');
+	</script>
+	<script type="text/javascript">
+	function changeTab(obj) {
+		alert(obj);
+		window.location.href=obj;
+	}
 	</script>
 </body>
 </html>
