@@ -20,7 +20,7 @@
 
     //限制可以提交进后台的查询串的长度的最大值
 	var max_query_length = 200;
-	var urlAction="analyzer";
+	var urlAction="analyzer3";
 	
     function doSub(formId,inputPrefix,inputIndex){
         var inputId=inputPrefix+inputIndex;
@@ -115,20 +115,20 @@
 		<ul
 			class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
 			role="tablist">
-			<li
-				class="ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-focus"
-				role="tab" tabindex="0" aria-controls="tabs-1"
-				aria-labelledby="ui-id-1" aria-selected="true"><a href="#"
-				class="ui-tabs-anchor" role="presentation" tabindex="-1"
-				id="ui-id-1">分词</a></li>
+			<li class="ui-state-default ui-corner-top" role="tab" tabindex="0"
+				aria-controls="tabs-1" aria-labelledby="ui-id-1"
+				aria-selected="true"><a href="index" class="ui-tabs-anchor"
+				role="presentation" tabindex="-1" id="ui-id-1">分词</a></li>
 			<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1"
 				aria-controls="tabs-2" aria-labelledby="ui-id-2"
 				aria-selected="false"><a href="index2" class="ui-tabs-anchor"
 				role="presentation" tabindex="-1" id="ui-id-2">词性标注</a></li>
-			<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1"
-				aria-controls="tabs-3" aria-labelledby="ui-id-3"
-				aria-selected="false"><a href="index3" class="ui-tabs-anchor"
-				role="presentation" tabindex="-1" id="ui-id-3">情感正负性</a></li>
+			<li
+				class="ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-focus"
+				role="tab" tabindex="-1" aria-controls="tabs-3"
+				aria-labelledby="ui-id-3" aria-selected="false"><a href="#"
+				class="ui-tabs-anchor" role="presentation" tabindex="-1"
+				id="ui-id-3">情感正负性</a></li>
 		</ul>
 		<div id="tabs-1" aria-labelledby="ui-id-1"
 			class="ui-tabs-panel ui-widget-content ui-corner-bottom"
