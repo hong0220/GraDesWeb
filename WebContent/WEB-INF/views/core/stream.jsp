@@ -15,24 +15,39 @@
 <body>
 	<div id="wrapper">
 		<div id="container">
-			<c:forEach var="o" items="${vo}" varStatus="status">
+		<%-- 	<c:forEach var="o" items="${vo}" varStatus="status">
 				<div class="grid">
 					<strong>${o.userId }</strong>
 					<p>${o.content }</p>
 					<br>
 					<p>${o.createtime }</p>
-					<div class="meta">
-						<a href="http://www.phplearn.cn/" target="_blank">点击查看>>></a>
-					</div>
 				</div>
-			</c:forEach>
+			</c:forEach> --%>
 		</div>
 	</div>
 
 	<script type="text/javascript">
-		$(function() {
-			$("img.lazy").lazyload({
-				load : function() {
+		var page = 1;
+		function get() {
+			$.ajax({
+				type : "post",
+				url : "${ctx}/get?userId=2178865632&page="
+						+ page + "&size=20",
+				dataType : "json",
+				contentType : "application/json;charset=utf-8",
+				success : function(data) {
+					var html = "";
+					for (var i = 0; i < data.length; ++i) {
+						var weibo = data[i];
+						html += "<div class='grid'><strong>"
+								+ weibo.userId + "</strong><p>"
+								+ weibo.content + "<br><p>时间:"
+								+ weibo.createtime
+								+ "</p></div>"
+					}
+					page++;
+
+					$('#container').append(html);
 					$('#container').BlocksIt({
 						numOfCol : 5,
 						offsetX : 8,
@@ -40,51 +55,24 @@
 					});
 				}
 			});
-			$(window).scroll(
-					function() {
-						// 当滚动到最底部以上50像素时， 加载新内容
-						if ($(document).height() - $(this).scrollTop()
-								- $(this).height() < 50) {
-
-							$('#container').append($("#test").html());
-							$('#container').BlocksIt({
-								numOfCol : 5,
-								offsetX : 8,
-								offsetY : 8
-							});
-							$("img.lazy").lazyload();
-						}
-					});
-
-			//window resize
-			var currentWidth = 1100;
-			$(window).resize(function() {
-				var winWidth = $(window).width();
-				var conWidth;
-				if (winWidth < 660) {
-					conWidth = 440;
-					col = 2
-				} else if (winWidth < 880) {
-					conWidth = 660;
-					col = 3
-				} else if (winWidth < 1100) {
-					conWidth = 880;
-					col = 4;
-				} else {
-					conWidth = 1100;
-					col = 5;
-				}
-
-				if (conWidth != currentWidth) {
-					currentWidth = conWidth;
-					$('#container').width(conWidth);
-					$('#container').BlocksIt({
-						numOfCol : col,
-						offsetX : 8,
-						offsetY : 8
-					});
-				}
+		}
+		
+		get();
+		$(function() {
+			$('#container').BlocksIt({
+				numOfCol : 5,
+				offsetX : 8,
+				offsetY : 8
 			});
+
+			$(window).scroll(
+				function() {
+					// 当滚动到最底部以上50像素时， 加载新内容
+					if ($(document).height() - $(this).scrollTop() - $(this).height() < 50) {
+						get();
+					}
+				}
+			);
 		});
 	</script>
 </body>
