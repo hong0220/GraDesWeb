@@ -3,7 +3,7 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <html>
 <head>
-<title>话题情感倾向统计</title>
+<title>微博情感倾向统计</title>
 <script src="${ctx}/static/jquery/1.7.2/jquery.min.js"
 	type="text/javascript"></script>
 <script src="${ctx}/static/highcharts/highcharts.js"

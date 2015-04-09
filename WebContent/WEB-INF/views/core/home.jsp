@@ -26,7 +26,7 @@
 	<div style="text-align: center; font-size: 20px; font-weight: bold;"
 		class="">
 		<span title="normal" class="index_tags_span_block"
-			style="width: 100px;">股评家</span>
+			style="width: 100px;"><a target="_blank" href="${ctx}/index">文本处理</a</span>
 	</div>
 
 	<!-- 数据显示部分 -->
