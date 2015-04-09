@@ -18,7 +18,10 @@ public class WeiboDaoImpl implements WeiboDaoI {
 
 	@Override
 	public List<Weibo> get(String userId, Integer page, Integer size) {
-		return wm.selectByExample(new WeiboExample());
+		WeiboExample we = new WeiboExample();
+		we.setStart(page);
+		we.setLimit(size);
+		return wm.selectByExample(we);
 	}
 
 	@Override

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 import com.fjnu.model.EmotionValues;
+import com.hyh.utils.AnsjAnalyzer;
 import com.hyh.utils.MyAnalyzer;
 
 public class EmotionAnalysis {
@@ -16,7 +17,7 @@ public class EmotionAnalysis {
 		int cur = -1;
 		int i = 0;
 		// 中文分词
-		LinkedList<String> list = MyAnalyzer.IK_Analyzer(content);
+		LinkedList<String> list = AnsjAnalyzer.ansjAnalyzer(content);
 
 		for (String word : list) {
 			i++;
@@ -68,7 +69,7 @@ public class EmotionAnalysis {
 		int negativeValues = 0;
 		int fouDingCiCount = 0;
 		// 中文分词
-		LinkedList<String> list = MyAnalyzer.IK_Analyzer(content);
+		LinkedList<String> list = AnsjAnalyzer.ansjAnalyzer(content);
 
 		// 每个词语
 		for (String word : list) {

@@ -1,1 +1,1 @@
-http://localhost:9090/get?userId=2178865632&page=1&size=10
+http://localhost:8080/stream?userId=2178865632&page=1&size=10

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.fjnu.model.EmotionValues;
 import com.fjnu.utils.EmotionAnalysis;
 import com.fjnu.utils.LoadData;
+import com.hyh.utils.AnsjAnalyzer;
 import com.hyh.utils.MyAnalyzer;
 
 @Controller
@@ -41,10 +42,14 @@ public class IndexController {
 			throws IOException {
 		System.out.println("analyzer");
 		if (operatorType.equals("1")) {
-			LinkedList<String> list = MyAnalyzer.IK_Analyzer(input);
+			LinkedList<String> list = AnsjAnalyzer.ansjAnalyzer(input);
 			StringBuffer sb = new StringBuffer();
-			for (String str : list) {
-				sb.append(str + "\\");
+			for (int index = 0; index < list.size(); ++index) {
+				if (index == list.size() - 1) {
+					sb.append(list.get(index));
+				} else {
+					sb.append(list.get(index) + "\\");
+				}
 			}
 			response.getWriter().write(sb.toString());
 		} else if (operatorType.equals("2")) {

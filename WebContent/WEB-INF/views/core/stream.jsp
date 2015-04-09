@@ -15,16 +15,17 @@
 <body>
 	<div id="wrapper">
 		<div id="container">
-			<div class="grid">
-				<div class="imgholder"></div>
-				<strong>作品1</strong>
-				<p>Jquery实现js/css代码在线压缩/格式化/混淆/解混淆|jqueryschool-插件教程分享
-					此工具是漫画综合了网络上比较流行的一些JS混淆、压缩、格式化、CSS压缩、CSS格式化等流行的辅助工具改编而成，为了让网友方便使用，漫画把所有功能都分离出来，完全可以脱机使用，无需考虑到要联网
-					点击查看》》》</p>
-				<div class="meta">
-					<a href="http://www.phplearn.cn/" target="_blank">点击查看>>></a>
+			<c:forEach var="o" items="${vo}" varStatus="status">
+				<div class="grid">
+					<strong>${o.userId }</strong>
+					<p>${o.content }</p>
+					<br>
+					<p>${o.createtime }</p>
+					<div class="meta">
+						<a href="http://www.phplearn.cn/" target="_blank">点击查看>>></a>
+					</div>
 				</div>
-			</div>
+			</c:forEach>
 		</div>
 	</div>
 
