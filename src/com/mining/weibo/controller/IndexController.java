@@ -3,10 +3,12 @@ package com.mining.weibo.controller;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.ansj.splitWord.analysis.ToAnalysis;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -42,9 +44,12 @@ public class IndexController {
 			LinkedList<String> list = MyAnalyzer.IK_Analyzer(input);
 			StringBuffer sb = new StringBuffer();
 			for (String str : list) {
-				sb.append(str + " ");
+				sb.append(str + "\\");
 			}
 			response.getWriter().write(sb.toString());
+		} else if (operatorType.equals("2")) {
+			List paser = ToAnalysis.parse(input);
+			response.getWriter().write(paser.toString());
 		} else if (operatorType.equals("3")) {
 			// 加载词库数据到HashMap
 			HashMap<String, Integer> map = new HashMap<String, Integer>();

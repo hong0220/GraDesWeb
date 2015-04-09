@@ -10,6 +10,10 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.wltea.analyzer.lucene.IKAnalyzer;
 
 /**
+ * IKAnalyzer2012.jar
+ * 
+ * lucene-core-3.6.0.jar
+ * 
  * 采用了特有的“正向迭代最细粒度切分算法“，具有60万字/秒的高速处理能力。
  */
 public class MyAnalyzer {
