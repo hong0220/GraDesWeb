@@ -27,7 +27,7 @@
 	</div>
 
 	<script type="text/javascript">
-		var page = 1;
+		var page = 0;
 		get();
 		$(function() {
 			$('#container').BlocksIt({

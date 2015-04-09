@@ -30,4 +30,10 @@ public class WeiboUser {
 	public void setAuthority(String authority) {
 		this.authority = authority == null ? null : authority.trim();
 	}
+
+	@Override
+	public String toString() {
+		return "WeiboUser [id=" + id + ", userId=" + userId + ", authority="
+				+ authority + "]";
+	}
 }

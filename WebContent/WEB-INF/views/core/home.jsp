@@ -1,12 +1,16 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="ctx" value="${pageContext.request.contextPath}" />
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- 导入自己的css -->
-<link type="text/css" href="resource/css/css.css" rel="stylesheet">
+<link type="text/css" href="${ctx}/resource/css/css.css"
+	rel="stylesheet">
 <!-- 公共js -->
-<script type="text/javascript" src="resource/js/common.js"></script>
+<script type="text/javascript" src="${ctx}/resource/js/common.js"></script>
 <!-- 翻页 -->
-<script type="text/javascript" src="resource/js/pageSplit.js"></script>
+<script type="text/javascript" src="${ctx}/resource/js/pageSplit.js"></script>
 <title>微博博主主页</title>
 </head>
 <body>
@@ -36,24 +40,28 @@
 					<td>操作</td>
 				</tr>
 
-				<tr>
-					<td style="vertical-align: middle; border-bottom: 1px dotted red">
-						<div style="text-align: left;">
-							<a target="_blank" href="http://www.weibo.com/1708767015">
-								叶祖新</a>
-						</div>
-					</td>
-					<!-- 微博数 -->
-					<td style="vertical-align: middle; border-bottom: 1px dotted red">
-						<span>1675 </span>
-					</td>
-					<!-- 操作 -->
-					<td style="vertical-align: middle; border-bottom: 1px dotted red">
-						<div
-							onclick="doEvalStatistics(&#39;1708767015&#39;,&#39;叶祖新&#39;)"
-							style="font-size: 16px; font-weight: bold; background: orange; text-align: center; padding: 5px; width: 120px; cursor: pointer;">情感分析</div>
-					</td>
-				</tr>
+				<c:forEach var="o" items="${vo}" varStatus="status">
+					<div class="grid">
+						<tr>
+							<td style="vertical-align: middle; border-bottom: 1px dotted red">
+								<div style="text-align: left;">
+									<a target="_blank" href="http://www.weibo.com/1708767015">
+										${o.userId }</a>
+								</div>
+							</td>
+							<!-- 微博数 -->
+							<td style="vertical-align: middle; border-bottom: 1px dotted red">
+								<span>1675 </span>
+							</td>
+							<!-- 操作 -->
+							<td style="vertical-align: middle; border-bottom: 1px dotted red">
+								<div
+									onclick="doEvalStatistics(&#39;1708767015&#39;,&#39;叶祖新&#39;)"
+									style="font-size: 16px; font-weight: bold; background: orange; text-align: center; padding: 5px; width: 120px; cursor: pointer;">情感分析</div>
+							</td>
+						</tr>
+					</div>
+				</c:forEach>
 
 			</tbody>
 		</table>
@@ -68,8 +76,6 @@
 				onclick="jumpFront(1)"> &lt; </a> <span class="current">1</span> <a
 				href="http://www.yuqing36524.com:8888/EntityEvalPlatform/search!personal.action#"
 				onclick="jumpPage(2)">2</a> <a
-				href="http://www.yuqing36524.com:8888/EntityEvalPlatform/search!personal.action#"
-				onclick="jumpPage(3)">3</a><a
 				href="http://www.yuqing36524.com:8888/EntityEvalPlatform/search!personal.action#"
 				onclick="jumpPage(10)">10</a> <a
 				href="http://www.yuqing36524.com:8888/EntityEvalPlatform/search!personal.action#"
