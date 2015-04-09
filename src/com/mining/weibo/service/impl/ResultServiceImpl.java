@@ -20,4 +20,8 @@ public class ResultServiceImpl implements ResultServiceI {
 		return rd.get(userId, page, size);
 	}
 
+	@Override
+	public List<Result> get(String userId) {
+		return rd.get(userId);
+	}
 }

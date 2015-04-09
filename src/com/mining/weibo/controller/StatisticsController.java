@@ -23,26 +23,16 @@ public class StatisticsController {
 
 	@RequestMapping(value = "statistic")
 	public String statistic(HttpServletRequest request,
-			HttpServletResponse response, Map<String, Object> map)
+			HttpServletResponse response, Map<String, Object> map, String userId)
 			throws IOException {
-
-		/*
-		 * map.put("day", new String[] { "3月1号", "3月2号", "3月3号", "3月4号", "3月5号",
-		 * "3月6号", "3月7号", "3月8号", "3月9号", "3月10号", "3月11号", "3月12号", "3月1号",
-		 * "3月2号", "3月3号", "3月4号", "3月5号", "3月6号", "3月7号", "3月8号", "3月9号",
-		 * "3月10号", "3月11号", "3月12号" });
-		 */
-		/*
-		 * List<Result> list = rs.get("3286692011", 1, 5); for (Result result :
-		 * list) { System.out.println(result); }
-		 */
+		map.put("userId", userId);
 		return "core/statistic";
 	}
 
 	@RequestMapping(value = "total")
 	public void get(HttpServletRequest request, HttpServletResponse response,
-			Map<String, Object> map) throws IOException {
-		List<Result> list = rs.get("3286692011", 1, 5);
+			Map<String, Object> map, String userId) throws IOException {
+		List<Result> list = rs.get(userId);
 		for (Result result : list) {
 			result.setDay(result.getDay());
 		}

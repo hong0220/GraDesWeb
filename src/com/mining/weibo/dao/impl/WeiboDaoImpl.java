@@ -21,6 +21,7 @@ public class WeiboDaoImpl implements WeiboDaoI {
 		WeiboExample we = new WeiboExample();
 		we.setStart(page);
 		we.setLimit(size);
+		we.or().andUserIdEqualTo(userId);
 		return wm.selectByExample(we);
 	}
 

@@ -47,7 +47,7 @@
 						<tr>
 							<td style="vertical-align: middle; border-bottom: 1px dotted red">
 								<div style="text-align: left;">
-									<a target="_blank" href="http://www.weibo.com/${o.userId }">
+									<a target="_blank" href="${ctx}/stream?userId=${o.userId }">
 										${o.name }</a>
 								</div>
 							</td>
@@ -66,7 +66,7 @@
 							<td style="vertical-align: middle; border-bottom: 1px dotted red">
 								<div
 									style="font-size: 16px; font-weight: bold; background: orange; text-align: center; padding: 5px; width: 120px; cursor: pointer;">
-									<a target="_blank" href="${ctx}/stream?userId=${o.userId }">情感分析</a>
+									<a target="_blank" href="${ctx}/statistic?userId=${o.userId }">情感分析</a>
 								</div>
 							</td>
 						</tr>

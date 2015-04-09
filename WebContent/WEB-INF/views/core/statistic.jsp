@@ -20,6 +20,7 @@
 		style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 
 	<script>
+	    var userId = ${userId};
 		Date.prototype.pattern = function(fmt) {
 			var o = {
 				"M+" : this.getMonth() + 1, //月份           
@@ -71,7 +72,7 @@
 					function() {
 						$.ajax({
 							type : "post",
-							url : "${ctx}/total",
+							url : "${ctx}/total?userId="+userId,
 							dataType : "json",
 							contentType : "application/json;charset=utf-8",
 							success : function(data) {

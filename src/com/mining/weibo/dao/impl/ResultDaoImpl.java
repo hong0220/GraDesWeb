@@ -3,6 +3,7 @@ package com.mining.weibo.dao.impl;
 import java.util.List;
 
 import javax.annotation.Resource;
+
 import org.springframework.stereotype.Repository;
 
 import com.mining.weibo.dao.ResultDaoI;
@@ -18,8 +19,15 @@ public class ResultDaoImpl implements ResultDaoI {
 	@Override
 	public List<Result> get(String userId, Integer page, Integer size) {
 		ResultExample re = new ResultExample();
-		// re.setStart(page);
-		// re.setLimit(size);
+		re.setStart(page);
+		re.setLimit(size);
+		re.or().andUserIdEqualTo(userId);
+		return rm.selectByExample(re);
+	}
+
+	@Override
+	public List<Result> get(String userId) {
+		ResultExample re = new ResultExample();
 		re.or().andUserIdEqualTo(userId);
 		return rm.selectByExample(re);
 	}

@@ -27,10 +27,7 @@
 	</div>
 
 	<script type="text/javascript">
-		var userId = $
-		{
-			userId
-		}
+		var userId = ${userId};
 		var page = 0;
 		get();
 		$(function() {
