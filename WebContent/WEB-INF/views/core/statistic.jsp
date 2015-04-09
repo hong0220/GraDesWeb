@@ -78,6 +78,7 @@
 								var day = new Array();
 								var jiji = new Array();
 								var xiaoji = new Array();
+								var zhangdie = new Array();
 								for (var i = 0; i < data.length; ++i) {
 									var result = data[i];
 									var unixTimestamp = new Date(result.day);
@@ -86,14 +87,15 @@
 									day.push(commonTime);
 									jiji.push(result.positive);
 									xiaoji.push(result.negative);
+									zhangdie.push(result.riseorfall)
 								}
-								setTrendChart(day, jiji, xiaoji);
+								setTrendChart(day, jiji, xiaoji, zhangdie);
 							}
 						});
 					});
 		});
 
-		function setTrendChart(day, jiji, xiaoji) {
+		function setTrendChart(day, jiji, xiaoji, zhangdie) {
 			numTrendChart = new Highcharts.Chart({
 				chart : {
 					renderTo : 'numTrendContainer',
@@ -138,6 +140,9 @@
 				}, {
 					name : '消极情感的情感权值',
 					data : xiaoji
+				}, {
+					name : '股票涨跌情况',
+					data : zhangdie
 				} ]
 			});
 		}

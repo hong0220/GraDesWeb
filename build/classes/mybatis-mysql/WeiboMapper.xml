@@ -22,7 +22,8 @@
 									and ${criterion.condition} #{criterion.value}
 								</when>
 								<when test="criterion.betweenValue">
-									and ${criterion.condition} #{criterion.value} and
+									and ${criterion.condition} #{criterion.value}
+									and
 									#{criterion.secondValue}
 								</when>
 								<when test="criterion.listValue">
@@ -54,7 +55,8 @@
 									and ${criterion.condition} #{criterion.value}
 								</when>
 								<when test="criterion.betweenValue">
-									and ${criterion.condition} #{criterion.value} and
+									and ${criterion.condition} #{criterion.value}
+									and
 									#{criterion.secondValue}
 								</when>
 								<when test="criterion.listValue">
@@ -108,9 +110,11 @@
 		</if>
 	</delete>
 	<insert id="insert" parameterType="com.mining.weibo.model.Weibo">
-		insert into weibo (id, user_id, content,
+		insert into weibo (id,
+		user_id, content,
 		createtime, page)
-		values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR},
+		values (#{id,jdbcType=INTEGER},
+		#{userId,jdbcType=VARCHAR},
 		#{content,jdbcType=VARCHAR},
 		#{createtime,jdbcType=TIMESTAMP}, #{page,jdbcType=INTEGER})
 	</insert>
@@ -184,10 +188,14 @@
 	<update id="updateByExample" parameterType="map">
 		update weibo
 		set id = #{record.id,jdbcType=INTEGER},
-		user_id = #{record.userId,jdbcType=VARCHAR},
-		content = #{record.content,jdbcType=VARCHAR},
-		createtime = #{record.createtime,jdbcType=TIMESTAMP},
-		page = #{record.page,jdbcType=INTEGER}
+		user_id =
+		#{record.userId,jdbcType=VARCHAR},
+		content =
+		#{record.content,jdbcType=VARCHAR},
+		createtime =
+		#{record.createtime,jdbcType=TIMESTAMP},
+		page =
+		#{record.page,jdbcType=INTEGER}
 		<if test="_parameter != null">
 			<include refid="Update_By_Example_Where_Clause" />
 		</if>
@@ -212,10 +220,14 @@
 	</update>
 	<update id="updateByPrimaryKey" parameterType="com.mining.weibo.model.Weibo">
 		update weibo
-		set user_id = #{userId,jdbcType=VARCHAR},
-		content = #{content,jdbcType=VARCHAR},
-		createtime = #{createtime,jdbcType=TIMESTAMP},
+		set
+		user_id = #{userId,jdbcType=VARCHAR},
+		content =
+		#{content,jdbcType=VARCHAR},
+		createtime =
+		#{createtime,jdbcType=TIMESTAMP},
 		page = #{page,jdbcType=INTEGER}
-		where id = #{id,jdbcType=INTEGER}
+		where
+		id = #{id,jdbcType=INTEGER}
 	</update>
 </mapper>
