@@ -28,35 +28,6 @@
 
 	<script type="text/javascript">
 		var page = 1;
-		function get() {
-			$.ajax({
-				type : "post",
-				url : "${ctx}/get?userId=2178865632&page="
-						+ page + "&size=20",
-				dataType : "json",
-				contentType : "application/json;charset=utf-8",
-				success : function(data) {
-					var html = "";
-					for (var i = 0; i < data.length; ++i) {
-						var weibo = data[i];
-						html += "<div class='grid'><strong>"
-								+ weibo.userId + "</strong><p>"
-								+ weibo.content + "<br><p>时间:"
-								+ weibo.createtime
-								+ "</p></div>"
-					}
-					page++;
-
-					$('#container').append(html);
-					$('#container').BlocksIt({
-						numOfCol : 5,
-						offsetX : 8,
-						offsetY : 8
-					});
-				}
-			});
-		}
-		
 		get();
 		$(function() {
 			$('#container').BlocksIt({
@@ -74,6 +45,38 @@
 				}
 			);
 		});
+		
+		function get() {
+			$.ajax({
+				type : "post",
+				url : "${ctx}/get?userId=2178865632&page="
+						+ page + "&size=20",
+				dataType : "json",
+				contentType : "application/json;charset=utf-8",
+				success : function(data) {
+					var html = "";
+					for (var i = 0; i < data.length; ++i) {
+						var weibo = data[i];
+						// 时间转化
+						var unixTimestamp = new Date(weibo.createtime);
+						var commonTime = unixTimestamp.toLocaleString();
+						html += "<div class='grid'><strong>作者ID: "
+								+ weibo.userId + "</strong><p><font color='#FF0000'>"
+								+ weibo.content + "</font><br><p>时间: "
+								+ commonTime
+								+ "</p></div>"
+					}
+					page++;
+
+					$('#container').append(html);
+					$('#container').BlocksIt({
+						numOfCol : 5,
+						offsetX : 8,
+						offsetY : 8
+					});
+				}
+			});
+		};
 	</script>
 </body>
 </html>
