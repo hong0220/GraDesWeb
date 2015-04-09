@@ -43,6 +43,8 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.13-bin.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/emotion/IKAnalyzer2012.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/emotion/lucene-core-3.6.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ansj/ansj_seg-2.0.8.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ansj/nlp-lang-0.3.jar"/>
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
