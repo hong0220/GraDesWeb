@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class StatisticsController {
 
 	@RequestMapping(value = "statistic")
-	public String statisticTopicSentiment() {
+	public String statistic() {
 		return "core/statistic";
 	}
 }
