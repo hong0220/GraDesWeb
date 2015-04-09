@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+/* CSS Document */ /**
+最外层的div,最接近边缘的div，一般是用它去包含其它的div
+*/
+.outerDiv {
+	width: 85%;
+	text-align: center;
+	/**
+	background-color: orange;
+	*/
+}
+
+.index_middle_div a {
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.index_font {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.index_middle_div {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.index_title_style {
+	font-size: 40px;
+	font-weight: bold;
+	color: blue;
+	font-family: 隶书;
+}
+
+.index_search_div {
+	margin-top: 150px;
+	 margin-left:100px;
+}
+
+.index_search_input {
+	height: 40px;
+	line-height: 40px;
+	width: 600px;
+	padding-left: 5px;
+}
+
+.index_search_button {
+	height: 45px;
+	line-height: 40px;
+	padding: 5px;
+	display:inline-block;
+	margin-left: -5px;
+	vertical-align: middle;
+}
+
+.index_tags {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.index_tags_span_block {
+	background-color: orange;
+	cursor: pointer;
+	padding: 5px;
+	text-align: center;
+	display:inline-block;
+	width:80px;
+	height:40px;
+	line-height: 45px;
+}
+
+.index_tags_span_none {
+	background-color: gray;
+	cursor: pointer;
+	padding: 5px;
+	text-align: center;
+	display:inline-block;
+	width:80px;
+	height:40px;
+	line-height: 45px;
+}
+
+.foot {
+	padding-top: 10px;
+	text-align: center;
+}
+
+/**
+  翻页的css修饰部分--开始
+*/
+.grayr {
+	padding: 2px;
+	font-size: 11px;
+	background: #fff;
+	float: right;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.grayr a {
+	padding: 2px 4px;
+	margin: 2px 1px;
+	color: #000;
+	text-decoration: none;
+	border: 1px solid #cccccc;
+}
+
+.grayr a:hover {
+	color: #000;
+	border: 1px solid #2D6798;
+}
+
+.grayr a:active {
+	color: #000;
+	background-color: #DEE9EF;
+}
+
+.grayr span.current {
+	padding: 2px 5px;
+	font-weight: bold;
+	margin: 2px;
+	/*color: #303030;
+	background:#fff;修改自2012年2月14日09时29分40秒*/
+	color: white;
+	background: #223426;
+	border: 1px solid #2D6798;
+}
+
+.grayr span.disabled {
+	padding: 2px 5px;
+	margin: 2px;
+	color: #797979;
+	border: 1px #c1c1c1 solid;
+	background-color: #cccccc;
+}
+/**
+  翻页的css修饰部分--结束
+*/
+/**
+   搜索页中的正负评价中的按钮
+**/
+.evalSpan {
+	color:red;
+	font-weight: bold;
+	cursor:pointer;
+}
+
+
+/**
+  以下为personal_feature.jsp特别声明
+*/
