@@ -36,6 +36,8 @@
 			<tbody>
 				<tr style="background: gray;">
 					<td>昵称</td>
+					<td>个人签名备注</td>
+					<td>粉丝数</td>
 					<td>微博数</td>
 					<td>操作</td>
 				</tr>
@@ -46,12 +48,19 @@
 							<td style="vertical-align: middle; border-bottom: 1px dotted red">
 								<div style="text-align: left;">
 									<a target="_blank" href="http://www.weibo.com/${o.userId }">
-										${o.userId }</a>
+										${o.name }</a>
 								</div>
+							</td>
+							<!-- 认证消息 -->
+							<td style="vertical-align: middle; border-bottom: 1px dotted red">
+								${o.verify }</td>
+							<!-- 粉丝数 -->
+							<td style="vertical-align: middle; border-bottom: 1px dotted red">
+								<span>${o.fan } </span>
 							</td>
 							<!-- 微博数 -->
 							<td style="vertical-align: middle; border-bottom: 1px dotted red">
-								<span>1675 </span>
+								<span>${o.post } </span>
 							</td>
 							<!-- 操作 -->
 							<td style="vertical-align: middle; border-bottom: 1px dotted red">
