@@ -68,7 +68,7 @@
 
 	//给每个文本框架置默认置
 	function setDefaultValue(){
-		var defaultValue="LESS为CSS赋予了动态语言的特性，如变量、继承、运算、函数。LESS既可以在客户端上运行 (支持IE 6+、Webkit、Firefox)，也可以借助Node.js或者Rhino在服务端运行。";
+		var defaultValue="【他将接受头颅移植手术[吃惊]】30岁的俄罗斯工程师斯皮里·多诺夫从小罹患肌肉萎缩症，他想拥有一个健康身体，将自己的头移植到捐赠者健康的身体上。捐赠者是一位脑死亡的病人。他将成为首个接受头部移植的人。手术定于明年实施，估计需36小时，成本约7000万人民币。（中新网）";
 		setElementId("input_3",defaultValue);
 	}
 </script>
