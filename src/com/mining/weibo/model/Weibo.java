@@ -11,7 +11,17 @@ public class Weibo {
 
 	private Date createtime;
 
+	private String time;
+
 	private Integer page;
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
 
 	public Integer getId() {
 		return id;

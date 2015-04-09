@@ -13,74 +13,96 @@
 </head>
 
 <body>
+
 	<div id="percentContainer"
 		style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 	<div id="numTrendContainer"
 		style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 
 	<script>
+		Date.prototype.pattern = function(fmt) {
+			var o = {
+				"M+" : this.getMonth() + 1, //月份           
+				"d+" : this.getDate(), //日           
+				"h+" : this.getHours() % 12 == 0 ? 12 : this.getHours() % 12, //小时           
+				"H+" : this.getHours(), //小时           
+				"m+" : this.getMinutes(), //分           
+				"s+" : this.getSeconds(), //秒           
+				"q+" : Math.floor((this.getMonth() + 3) / 3), //季度           
+				"S" : this.getMilliseconds()
+			//毫秒           
+			};
+			var week = {
+				"0" : "/u65e5",
+				"1" : "/u4e00",
+				"2" : "/u4e8c",
+				"3" : "/u4e09",
+				"4" : "/u56db",
+				"5" : "/u4e94",
+				"6" : "/u516d"
+			};
+			if (/(y+)/.test(fmt)) {
+				fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "")
+						.substr(4 - RegExp.$1.length));
+			}
+			if (/(E+)/.test(fmt)) {
+				fmt = fmt
+						.replace(
+								RegExp.$1,
+								((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? "/u661f/u671f"
+										: "/u5468")
+										: "")
+										+ week[this.getDay() + ""]);
+			}
+			for ( var k in o) {
+				if (new RegExp("(" + k + ")").test(fmt)) {
+					fmt = fmt.replace(RegExp.$1,
+							(RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k])
+									.substr(("" + o[k]).length)));
+				}
+			}
+			return fmt;
+		};
+
 		$(function() {
 			var numTrendChart;
 			var percentChart;
 			$(document).ready(
-				function() {
-					$.ajax({
-						type : "post",
-						url : "${ctx}/total",
-						dataType : "json",
-						contentType : "application/json;charset=utf-8",
-						success : function(data) {
-							var day = new Array();
-							var jiji = new Array();
-							var xiaoji = new Array();
-							for (var i = 0; i < data.length; ++i) {
-								var result = data[i];
-								var unixTimestamp = new Date(result.day);
-								var commonTime = unixTimestamp.toLocaleString();
-								day.push(commonTime);
-								jiji.push(result.positive);
-								xiaoji.push(result.negative);
+					function() {
+						$.ajax({
+							type : "post",
+							url : "${ctx}/total",
+							dataType : "json",
+							contentType : "application/json;charset=utf-8",
+							success : function(data) {
+								var day = new Array();
+								var jiji = new Array();
+								var xiaoji = new Array();
+								for (var i = 0; i < data.length; ++i) {
+									var result = data[i];
+									var unixTimestamp = new Date(result.day);
+									var commonTime = unixTimestamp
+											.pattern("yyyy-MM-dd");
+									day.push(commonTime);
+									jiji.push(result.positive);
+									xiaoji.push(result.negative);
+								}
+								setTrendChart(day, jiji, xiaoji);
 							}
-							setTrendChart(day,jiji,xiaoji);
-						}
+						});
 					});
-					
-					
-					
-					/* var day = ["3月1号", "3月2号", "3月3号", "3月4号", "3月5号",
-						"3月6号", "3月7号", "3月8号", "3月9号", "3月10号", "3月11号", "3月12号",
-						"3月1号", "3月2号", "3月3号", "3月4号", "3月5号", "3月6号", "3月7号", "3月8号",
-						"3月9号", "3月10号", "3月11号", "3月12号" ];
-					var jiji = [ 0.9, 0.6, 3.5, 8.4, 13.5,
-								17.0, 18.6, 17.9, 14.3, 9.0,
-								3.9, 1.0, 0.9, 0.6, 3.5, 8.4,
-								13.5, 17.0, 18.6, 17.9, 14.3,
-								9.0, 3.9, 1.0 ];
-					var xiaoji =[ 3.9, 4.2, 5.7, 8.5, 11.9,
-								15.2, 17.0, 16.6, 14.2, 10.3,
-								6.6, 4.8, 3.9, 4.2, 5.7, 8.5,
-								11.9, 15.2, 17.0, 16.6, 94.2,
-								10.3, 6.6, 4.8 ];
-					var zhongxing = [ 4.9, 5.2, 6.7, 8.5, 11.9,
-									15.2, 17.0, 9.6, 3.2, 3.3, 6.6,
-									8.8, 4.9, 5.2, 6.7, 8.5, 11.9,
-									15.2, 17.0, 9.6, 3.2, 3.3, 6.6,
-									8.8 ];
-					setTrendChart(day,jiji,xiaoji); */
-				}
-			);
 		});
-		
-		function setTrendChart(day,jiji,xiaoji) {
+
+		function setTrendChart(day, jiji, xiaoji) {
 			numTrendChart = new Highcharts.Chart({
 				chart : {
 					renderTo : 'numTrendContainer',
 					type : 'line',
 					marginRight : 130,
-					marginBottom : 25
+					marginBottom : 40
 				},
 				title : {
-					text : '主观微博的数量变化图',
+					text : '微博情感权值变化图',
 					x : -30
 				},
 				xAxis : {
@@ -88,7 +110,7 @@
 				},
 				yAxis : {
 					title : {
-						text : '微博数量'
+						text : '情感权值'
 					},
 					plotLines : [ {
 						value : 0,
@@ -98,9 +120,8 @@
 				},
 				tooltip : {
 					formatter : function() {
-						return '<b>' + this.series.name
-								+ '</b><br/>' + this.x + ': '
-								+ this.y + '条';
+						return '<b>' + this.x + ' ' + this.series.name + ': '
+								+ this.y + '</b><br/>';
 					}
 				},
 				legend : {
@@ -111,15 +132,13 @@
 					y : 100,
 					borderWidth : 0
 				},
-				series : [
-						{
-							name : '积极情感的微博数量增量',
-							data : jiji
-						},
-						{
-							name : '消极情感的微博数量增量',
-							data : xiaoji
-						}]
+				series : [ {
+					name : '积极情感的情感权值',
+					data : jiji
+				}, {
+					name : '消极情感的情感权值',
+					data : xiaoji
+				} ]
 			});
 		}
 	</script>

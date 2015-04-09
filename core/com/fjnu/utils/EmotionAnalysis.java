@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 import com.fjnu.model.EmotionValues;
-import com.hyh.utils.AnsjAnalyzer;
-import com.hyh.utils.MyAnalyzer;
 
 public class EmotionAnalysis {
 

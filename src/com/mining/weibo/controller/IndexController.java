@@ -13,10 +13,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.fjnu.model.EmotionValues;
+import com.fjnu.utils.AnsjAnalyzer;
 import com.fjnu.utils.EmotionAnalysis;
 import com.fjnu.utils.LoadData;
-import com.hyh.utils.AnsjAnalyzer;
-import com.hyh.utils.MyAnalyzer;
+import com.fjnu.utils.MyAnalyzer;
 
 @Controller
 public class IndexController {
