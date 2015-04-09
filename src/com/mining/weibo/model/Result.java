@@ -62,4 +62,11 @@ public class Result {
 	public void setRiseorfall(Float riseorfall) {
 		this.riseorfall = riseorfall;
 	}
+
+	@Override
+	public String toString() {
+		return "Result [id=" + id + ", day=" + day + ", userId=" + userId
+				+ ", positive=" + positive + ", negative=" + negative
+				+ ", riseorfall=" + riseorfall + "]";
+	}
 }

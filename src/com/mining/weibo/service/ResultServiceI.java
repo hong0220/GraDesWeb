@@ -1,5 +1,9 @@
 package com.mining.weibo.service;
 
-public interface ResultServiceI {
+import java.util.List;
 
+import com.mining.weibo.model.Result;
+
+public interface ResultServiceI {
+	public List<Result> get(String userId, Integer page, Integer size);
 }

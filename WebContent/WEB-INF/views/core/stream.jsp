@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>响应式jquery瀑布流结合图片延迟加载特效</title>
+<title>微博瀑布流列表</title>
 <link rel='stylesheet' href="${ctx}/resource/css/style.css"
 	media='screen' />
 <script type="text/javascript" src="${ctx}/resource/js/jquery.min.js"></script>
@@ -15,7 +15,7 @@
 <body>
 	<div id="wrapper">
 		<div id="container">
-		<%-- 	<c:forEach var="o" items="${vo}" varStatus="status">
+			<%-- 	<c:forEach var="o" items="${vo}" varStatus="status">
 				<div class="grid">
 					<strong>${o.userId }</strong>
 					<p>${o.content }</p>
@@ -37,20 +37,19 @@
 			});
 
 			$(window).scroll(
-				function() {
-					// 当滚动到最底部以上50像素时， 加载新内容
-					if ($(document).height() - $(this).scrollTop() - $(this).height() < 50) {
-						get();
-					}
-				}
-			);
+					function() {
+						// 当滚动到最底部以上50像素时， 加载新内容
+						if ($(document).height() - $(this).scrollTop()
+								- $(this).height() < 50) {
+							get();
+						}
+					});
 		});
-		
+
 		function get() {
 			$.ajax({
 				type : "post",
-				url : "${ctx}/get?userId=2178865632&page="
-						+ page + "&size=20",
+				url : "${ctx}/get?userId=2178865632&page=" + page + "&size=20",
 				dataType : "json",
 				contentType : "application/json;charset=utf-8",
 				success : function(data) {
@@ -61,10 +60,10 @@
 						var unixTimestamp = new Date(weibo.createtime);
 						var commonTime = unixTimestamp.toLocaleString();
 						html += "<div class='grid'><strong>作者ID: "
-								+ weibo.userId + "</strong><p><font color='#FF0000'>"
+								+ weibo.userId
+								+ "</strong><p><font color='#FF0000'>"
 								+ weibo.content + "</font><br><p>时间: "
-								+ commonTime
-								+ "</p></div>"
+								+ commonTime + "</p></div>"
 					}
 					page++;
 
