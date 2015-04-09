@@ -1,6 +1,7 @@
 package com.mining.weibo.controller;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -31,10 +32,10 @@ public class StatisticsController {
 		 * "3月2号", "3月3号", "3月4号", "3月5号", "3月6号", "3月7号", "3月8号", "3月9号",
 		 * "3月10号", "3月11号", "3月12号" });
 		 */
-		List<Result> list = rs.get("3286692011", 1, 5);
+		/*List<Result> list = rs.get("3286692011", 1, 5);
 		for (Result result : list) {
 			System.out.println(result);
-		}
+		}*/
 		return "core/statistic";
 	}
 
@@ -42,8 +43,10 @@ public class StatisticsController {
 	public void get(HttpServletRequest request, HttpServletResponse response,
 			Map<String, Object> map) throws IOException {
 		List<Result> list = rs.get("3286692011", 1, 5);
+		List<Result> resultList = new LinkedList<Result>();
 		for (Result result : list) {
-			System.out.println(result);
+			result.setDay(result.getDay());
+			resultList.add(result);
 		}
 		response.getWriter().write(FastJsonUtil.getJson(list));
 	}

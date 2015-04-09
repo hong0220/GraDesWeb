@@ -24,11 +24,30 @@
 			var percentChart;
 			$(document).ready(
 				function() {
+					$.ajax({
+						type : "post",
+						url : "${ctx}/total",
+						dataType : "json",
+						contentType : "application/json;charset=utf-8",
+						success : function(data) {
+							var day = new Array();
+							var jiji = new Array();
+							var xiaoji = new Array();
+							for (var i = 0; i < data.length; ++i) {
+								var result = data[i];
+								var unixTimestamp = new Date(result.day);
+								var commonTime = unixTimestamp.toLocaleString();
+								day.push(commonTime);
+								jiji.push(result.positive);
+								xiaoji.push(result.negative);
+							}
+							setTrendChart(day,jiji,xiaoji);
+						}
+					});
 					
 					
 					
-					
-					var day = ["3月1号", "3月2号", "3月3号", "3月4号", "3月5号",
+					/* var day = ["3月1号", "3月2号", "3月3号", "3月4号", "3月5号",
 						"3月6号", "3月7号", "3月8号", "3月9号", "3月10号", "3月11号", "3月12号",
 						"3月1号", "3月2号", "3月3号", "3月4号", "3月5号", "3月6号", "3月7号", "3月8号",
 						"3月9号", "3月10号", "3月11号", "3月12号" ];
@@ -47,12 +66,12 @@
 									8.8, 4.9, 5.2, 6.7, 8.5, 11.9,
 									15.2, 17.0, 9.6, 3.2, 3.3, 6.6,
 									8.8 ];
-					setTrendChart(day,jiji,xiaoji,zhongxing);
+					setTrendChart(day,jiji,xiaoji); */
 				}
 			);
 		});
 		
-		function setTrendChart(day,jiji,xiaoji,zhongxing) {
+		function setTrendChart(day,jiji,xiaoji) {
 			numTrendChart = new Highcharts.Chart({
 				chart : {
 					renderTo : 'numTrendContainer',
@@ -100,11 +119,7 @@
 						{
 							name : '消极情感的微博数量增量',
 							data : xiaoji
-						},
-						{
-							name : '中性情感的微博数量增量',
-							data : zhongxing
-						} ]
+						}]
 			});
 		}
 	</script>
