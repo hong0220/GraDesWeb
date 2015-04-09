@@ -45,7 +45,7 @@
 						<tr>
 							<td style="vertical-align: middle; border-bottom: 1px dotted red">
 								<div style="text-align: left;">
-									<a target="_blank" href="http://www.weibo.com/1708767015">
+									<a target="_blank" href="http://www.weibo.com/${o.userId }">
 										${o.userId }</a>
 								</div>
 							</td>
@@ -56,8 +56,9 @@
 							<!-- 操作 -->
 							<td style="vertical-align: middle; border-bottom: 1px dotted red">
 								<div
-									onclick="doEvalStatistics(&#39;1708767015&#39;,&#39;叶祖新&#39;)"
-									style="font-size: 16px; font-weight: bold; background: orange; text-align: center; padding: 5px; width: 120px; cursor: pointer;">情感分析</div>
+									style="font-size: 16px; font-weight: bold; background: orange; text-align: center; padding: 5px; width: 120px; cursor: pointer;">
+									<a target="_blank" href="${ctx}/stream?userId=${o.userId }">情感分析</a>
+								</div>
 							</td>
 						</tr>
 					</div>

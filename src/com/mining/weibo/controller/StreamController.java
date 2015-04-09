@@ -22,8 +22,9 @@ public class StreamController {
 
 	@RequestMapping(value = "stream")
 	public String stream(HttpServletRequest request,
-			HttpServletResponse response, Map<String, Object> map)
+			HttpServletResponse response, Map<String, Object> map, String userId)
 			throws IOException {
+		map.put("userId", userId);
 		return "core/stream";
 	}
 

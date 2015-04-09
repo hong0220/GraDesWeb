@@ -27,6 +27,10 @@
 	</div>
 
 	<script type="text/javascript">
+		var userId = $
+		{
+			userId
+		}
 		var page = 0;
 		get();
 		$(function() {
@@ -49,7 +53,8 @@
 		function get() {
 			$.ajax({
 				type : "post",
-				url : "${ctx}/get?userId=2178865632&page=" + page + "&size=20",
+				url : "${ctx}/get?userId=" + userId + "&page=" + page
+						+ "&size=20",
 				dataType : "json",
 				contentType : "application/json;charset=utf-8",
 				success : function(data) {
