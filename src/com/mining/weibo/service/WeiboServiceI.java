@@ -6,4 +6,6 @@ import com.mining.weibo.model.Weibo;
 
 public interface WeiboServiceI {
 	public List<Weibo> get(String userId, Integer page, Integer size);
+
+	public List<Weibo> getAll(String start, String stop);
 }

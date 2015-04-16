@@ -19,4 +19,9 @@ public class WeiboServiceImpl implements WeiboServiceI {
 	public List<Weibo> get(String userId, Integer page, Integer size) {
 		return wd.get(userId, page, size);
 	}
+
+	@Override
+	public List<Weibo> getAll(String start, String stop) {
+		return wd.getAll(start, stop);
+	}
 }
