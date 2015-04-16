@@ -23,11 +23,11 @@
 	</div>
 	<!-- 遮罩层 -->
 
-	<div style="text-align: center; font-size: 20px; font-weight: bold;"
+	<%-- 	<div style="text-align: center; font-size: 20px; font-weight: bold;"
 		class="">
 		<span title="normal" class="index_tags_span_block"
 			style="width: 100px;"><a target="_blank" href="${ctx}/index">文本处理</a</span>
-	</div>
+	</div> --%>
 
 	<!-- 数据显示部分 -->
 	<div style="padding: 50px;">
@@ -76,34 +76,5 @@
 			</tbody>
 		</table>
 	</div>
-
-	<div style="width: 80%; border: 0px; text-align: right">
-		<div class="grayr">
-			共找到 <font color="red">58362</font>条结果 <a
-				href="http://www.yuqing36524.com:8888/EntityEvalPlatform/search!personal.action#"
-				onclick="jumpPage(1)">首页 </a> <a
-				href="http://www.yuqing36524.com:8888/EntityEvalPlatform/search!personal.action#"
-				onclick="jumpFront(1)"> &lt; </a> <span class="current">1</span> <a
-				href="http://www.yuqing36524.com:8888/EntityEvalPlatform/search!personal.action#"
-				onclick="jumpPage(2)">2</a> <a
-				href="http://www.yuqing36524.com:8888/EntityEvalPlatform/search!personal.action#"
-				onclick="jumpPage(10)">10</a> <a
-				href="http://www.yuqing36524.com:8888/EntityEvalPlatform/search!personal.action#"
-				onclick="jumpNext(1,667)"> &gt; </a> <a
-				href="http://www.yuqing36524.com:8888/EntityEvalPlatform/search!personal.action#"
-				onclick="jumpPage(667)"> 尾页 </a>
-		</div>
-	</div>
-
-	<!-- 定义隐藏的form表单,用于请求博文情感分析时用 -->
-	<form id="entityForm"
-		action="http://www.yuqing36524.com:8888/EntityEvalPlatform/entity!eval.action"
-		method="post" style="visibility: hidden;">
-		<input type="hidden" id="queryId" name="searchParaPojo.query"
-			value="normal"> <input type="hidden"
-			name="searchParaPojo.evalType" id="evalType" value="3"> <input
-			type="hidden" id="nickName" name="searchParaPojo.nickName" value="">
-	</form>
-
 </body>
 </html>

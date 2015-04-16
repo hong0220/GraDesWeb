@@ -95,7 +95,7 @@
 			$.ajax({
 				type : "post",
 				url : "${ctx}/get?userId=" + userId + "&page=" + page
-						+ "&size=20",
+						+ "&size=23",
 				dataType : "json",
 				contentType : "application/json;charset=utf-8",
 				success : function(data) {
@@ -105,10 +105,10 @@
 						// 时间转化
 						var unixTimestamp = new Date(weibo.createtime);
 						var commonTime = unixTimestamp
-								.pattern("yyyy-MM-dd hh:mm:ss");
+								.pattern("yyyy-MM-dd");
 
 						html += "<div class='grid'><strong>作者ID: "
-								+ weibo.userId
+								+ weibo.name
 								+ "</strong><p><font color='#FF0000'>"
 								+ weibo.content + "</font><br><p>时间: "
 								+ commonTime + "</p></div>"

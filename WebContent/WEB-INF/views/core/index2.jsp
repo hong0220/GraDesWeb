@@ -85,7 +85,7 @@
 
 	<div
 		style="font-size: 35px; font-weight: bold; text-align: center; padding: 30px; color: blue;">
-		在线测试</div>
+		文本处理</div>
 
 	<!--隐藏的form表单定义 -->
 	<form id="onlineForm" style="visibility: hidden;">
