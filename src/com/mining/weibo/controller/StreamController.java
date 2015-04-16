@@ -59,7 +59,7 @@ public class StreamController {
 	public void get(HttpServletRequest request, HttpServletResponse response,
 			Map<String, Object> map, String userId) throws IOException {
 		List<Weibo> list = ws.getAll(userId, "2014-05-01", "2014-05-30");
-		System.out.println(list.size());
+		// System.out.println(list.size());
 		Integer ji = 0;
 		Integer xiao = 0;
 		Integer zhong = 0;
@@ -73,6 +73,7 @@ public class StreamController {
 			}
 		}
 		BingTu bt = new BingTu(ji, xiao, zhong);
+		System.out.println(bt);
 		response.getWriter().write(FastJsonUtil.getJson(bt));
 	}
 }
