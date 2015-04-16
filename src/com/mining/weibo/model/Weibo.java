@@ -3,70 +3,63 @@ package com.mining.weibo.model;
 import java.util.Date;
 
 public class Weibo {
-	private Integer id;
+    private Integer id;
 
-	private String userId;
+    private String userId;
 
-	private String content;
+    private String content;
 
-	private Date createtime;
+    private Date createtime;
 
-	private String time;
+    private String http;
 
-	private Integer page;
+    private Integer judge;
 
-	public String getTime() {
-		return time;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setTime(String time) {
-		this.time = time;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public Integer getId() {
-		return id;
-	}
+    public String getUserId() {
+        return userId;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
+    }
 
-	public String getUserId() {
-		return userId;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public void setUserId(String userId) {
-		this.userId = userId == null ? null : userId.trim();
-	}
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
 
-	public String getContent() {
-		return content;
-	}
+    public Date getCreatetime() {
+        return createtime;
+    }
 
-	public void setContent(String content) {
-		this.content = content == null ? null : content.trim();
-	}
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
 
-	public Date getCreatetime() {
-		return createtime;
-	}
+    public String getHttp() {
+        return http;
+    }
 
-	public void setCreatetime(Date createtime) {
-		this.createtime = createtime;
-	}
+    public void setHttp(String http) {
+        this.http = http == null ? null : http.trim();
+    }
 
-	public Integer getPage() {
-		return page;
-	}
+    public Integer getJudge() {
+        return judge;
+    }
 
-	public void setPage(Integer page) {
-		this.page = page;
-	}
-
-	@Override
-	public String toString() {
-		return "Weibo [id=" + id + ", userId=" + userId + ", content="
-				+ content + ", createtime=" + createtime + ", page=" + page
-				+ "]";
-	}
+    public void setJudge(Integer judge) {
+        this.judge = judge;
+    }
 }

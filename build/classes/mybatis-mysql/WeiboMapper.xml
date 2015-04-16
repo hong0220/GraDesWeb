@@ -6,7 +6,8 @@
 		<result column="user_id" property="userId" jdbcType="VARCHAR" />
 		<result column="content" property="content" jdbcType="VARCHAR" />
 		<result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
-		<result column="page" property="page" jdbcType="INTEGER" />
+		<result column="http" property="http" jdbcType="VARCHAR" />
+		<result column="judge" property="judge" jdbcType="INTEGER" />
 	</resultMap>
 	<sql id="Example_Where_Clause">
 		<where>
@@ -22,8 +23,7 @@
 									and ${criterion.condition} #{criterion.value}
 								</when>
 								<when test="criterion.betweenValue">
-									and ${criterion.condition} #{criterion.value}
-									and
+									and ${criterion.condition} #{criterion.value} and
 									#{criterion.secondValue}
 								</when>
 								<when test="criterion.listValue">
@@ -55,8 +55,7 @@
 									and ${criterion.condition} #{criterion.value}
 								</when>
 								<when test="criterion.betweenValue">
-									and ${criterion.condition} #{criterion.value}
-									and
+									and ${criterion.condition} #{criterion.value} and
 									#{criterion.secondValue}
 								</when>
 								<when test="criterion.listValue">
@@ -74,7 +73,7 @@
 		</where>
 	</sql>
 	<sql id="Base_Column_List">
-		id, user_id, content, createtime, page
+		id, user_id, content, createtime, http, judge
 	</sql>
 	<select id="selectByExample" resultMap="BaseResultMap"
 		parameterType="com.mining.weibo.model.WeiboExample">
@@ -110,13 +109,13 @@
 		</if>
 	</delete>
 	<insert id="insert" parameterType="com.mining.weibo.model.Weibo">
-		insert into weibo (id,
-		user_id, content,
-		createtime, page)
-		values (#{id,jdbcType=INTEGER},
-		#{userId,jdbcType=VARCHAR},
+		insert into weibo (id, user_id, content,
+		createtime, http, judge
+		)
+		values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR},
 		#{content,jdbcType=VARCHAR},
-		#{createtime,jdbcType=TIMESTAMP}, #{page,jdbcType=INTEGER})
+		#{createtime,jdbcType=TIMESTAMP}, #{http,jdbcType=VARCHAR}, #{judge,jdbcType=INTEGER}
+		)
 	</insert>
 	<insert id="insertSelective" parameterType="com.mining.weibo.model.Weibo">
 		insert into weibo
@@ -133,8 +132,11 @@
 			<if test="createtime != null">
 				createtime,
 			</if>
-			<if test="page != null">
-				page,
+			<if test="http != null">
+				http,
+			</if>
+			<if test="judge != null">
+				judge,
 			</if>
 		</trim>
 		<trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -150,8 +152,11 @@
 			<if test="createtime != null">
 				#{createtime,jdbcType=TIMESTAMP},
 			</if>
-			<if test="page != null">
-				#{page,jdbcType=INTEGER},
+			<if test="http != null">
+				#{http,jdbcType=VARCHAR},
+			</if>
+			<if test="judge != null">
+				#{judge,jdbcType=INTEGER},
 			</if>
 		</trim>
 	</insert>
@@ -177,8 +182,11 @@
 			<if test="record.createtime != null">
 				createtime = #{record.createtime,jdbcType=TIMESTAMP},
 			</if>
-			<if test="record.page != null">
-				page = #{record.page,jdbcType=INTEGER},
+			<if test="record.http != null">
+				http = #{record.http,jdbcType=VARCHAR},
+			</if>
+			<if test="record.judge != null">
+				judge = #{record.judge,jdbcType=INTEGER},
 			</if>
 		</set>
 		<if test="_parameter != null">
@@ -188,14 +196,11 @@
 	<update id="updateByExample" parameterType="map">
 		update weibo
 		set id = #{record.id,jdbcType=INTEGER},
-		user_id =
-		#{record.userId,jdbcType=VARCHAR},
-		content =
-		#{record.content,jdbcType=VARCHAR},
-		createtime =
-		#{record.createtime,jdbcType=TIMESTAMP},
-		page =
-		#{record.page,jdbcType=INTEGER}
+		user_id = #{record.userId,jdbcType=VARCHAR},
+		content = #{record.content,jdbcType=VARCHAR},
+		createtime = #{record.createtime,jdbcType=TIMESTAMP},
+		http = #{record.http,jdbcType=VARCHAR},
+		judge = #{record.judge,jdbcType=INTEGER}
 		<if test="_parameter != null">
 			<include refid="Update_By_Example_Where_Clause" />
 		</if>
@@ -212,22 +217,22 @@
 			<if test="createtime != null">
 				createtime = #{createtime,jdbcType=TIMESTAMP},
 			</if>
-			<if test="page != null">
-				page = #{page,jdbcType=INTEGER},
+			<if test="http != null">
+				http = #{http,jdbcType=VARCHAR},
+			</if>
+			<if test="judge != null">
+				judge = #{judge,jdbcType=INTEGER},
 			</if>
 		</set>
 		where id = #{id,jdbcType=INTEGER}
 	</update>
 	<update id="updateByPrimaryKey" parameterType="com.mining.weibo.model.Weibo">
 		update weibo
-		set
-		user_id = #{userId,jdbcType=VARCHAR},
-		content =
-		#{content,jdbcType=VARCHAR},
-		createtime =
-		#{createtime,jdbcType=TIMESTAMP},
-		page = #{page,jdbcType=INTEGER}
-		where
-		id = #{id,jdbcType=INTEGER}
+		set user_id = #{userId,jdbcType=VARCHAR},
+		content = #{content,jdbcType=VARCHAR},
+		createtime = #{createtime,jdbcType=TIMESTAMP},
+		http = #{http,jdbcType=VARCHAR},
+		judge = #{judge,jdbcType=INTEGER}
+		where id = #{id,jdbcType=INTEGER}
 	</update>
 </mapper>

@@ -388,63 +388,133 @@ public class WeiboExample {
 			return (Criteria) this;
 		}
 
-		public Criteria andPageIsNull() {
-			addCriterion("page is null");
+		public Criteria andHttpIsNull() {
+			addCriterion("http is null");
 			return (Criteria) this;
 		}
 
-		public Criteria andPageIsNotNull() {
-			addCriterion("page is not null");
+		public Criteria andHttpIsNotNull() {
+			addCriterion("http is not null");
 			return (Criteria) this;
 		}
 
-		public Criteria andPageEqualTo(Integer value) {
-			addCriterion("page =", value, "page");
+		public Criteria andHttpEqualTo(String value) {
+			addCriterion("http =", value, "http");
 			return (Criteria) this;
 		}
 
-		public Criteria andPageNotEqualTo(Integer value) {
-			addCriterion("page <>", value, "page");
+		public Criteria andHttpNotEqualTo(String value) {
+			addCriterion("http <>", value, "http");
 			return (Criteria) this;
 		}
 
-		public Criteria andPageGreaterThan(Integer value) {
-			addCriterion("page >", value, "page");
+		public Criteria andHttpGreaterThan(String value) {
+			addCriterion("http >", value, "http");
 			return (Criteria) this;
 		}
 
-		public Criteria andPageGreaterThanOrEqualTo(Integer value) {
-			addCriterion("page >=", value, "page");
+		public Criteria andHttpGreaterThanOrEqualTo(String value) {
+			addCriterion("http >=", value, "http");
 			return (Criteria) this;
 		}
 
-		public Criteria andPageLessThan(Integer value) {
-			addCriterion("page <", value, "page");
+		public Criteria andHttpLessThan(String value) {
+			addCriterion("http <", value, "http");
 			return (Criteria) this;
 		}
 
-		public Criteria andPageLessThanOrEqualTo(Integer value) {
-			addCriterion("page <=", value, "page");
+		public Criteria andHttpLessThanOrEqualTo(String value) {
+			addCriterion("http <=", value, "http");
 			return (Criteria) this;
 		}
 
-		public Criteria andPageIn(List<Integer> values) {
-			addCriterion("page in", values, "page");
+		public Criteria andHttpLike(String value) {
+			addCriterion("http like", value, "http");
 			return (Criteria) this;
 		}
 
-		public Criteria andPageNotIn(List<Integer> values) {
-			addCriterion("page not in", values, "page");
+		public Criteria andHttpNotLike(String value) {
+			addCriterion("http not like", value, "http");
 			return (Criteria) this;
 		}
 
-		public Criteria andPageBetween(Integer value1, Integer value2) {
-			addCriterion("page between", value1, value2, "page");
+		public Criteria andHttpIn(List<String> values) {
+			addCriterion("http in", values, "http");
 			return (Criteria) this;
 		}
 
-		public Criteria andPageNotBetween(Integer value1, Integer value2) {
-			addCriterion("page not between", value1, value2, "page");
+		public Criteria andHttpNotIn(List<String> values) {
+			addCriterion("http not in", values, "http");
+			return (Criteria) this;
+		}
+
+		public Criteria andHttpBetween(String value1, String value2) {
+			addCriterion("http between", value1, value2, "http");
+			return (Criteria) this;
+		}
+
+		public Criteria andHttpNotBetween(String value1, String value2) {
+			addCriterion("http not between", value1, value2, "http");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeIsNull() {
+			addCriterion("judge is null");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeIsNotNull() {
+			addCriterion("judge is not null");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeEqualTo(Integer value) {
+			addCriterion("judge =", value, "judge");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeNotEqualTo(Integer value) {
+			addCriterion("judge <>", value, "judge");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeGreaterThan(Integer value) {
+			addCriterion("judge >", value, "judge");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeGreaterThanOrEqualTo(Integer value) {
+			addCriterion("judge >=", value, "judge");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeLessThan(Integer value) {
+			addCriterion("judge <", value, "judge");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeLessThanOrEqualTo(Integer value) {
+			addCriterion("judge <=", value, "judge");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeIn(List<Integer> values) {
+			addCriterion("judge in", values, "judge");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeNotIn(List<Integer> values) {
+			addCriterion("judge not in", values, "judge");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeBetween(Integer value1, Integer value2) {
+			addCriterion("judge between", value1, value2, "judge");
+			return (Criteria) this;
+		}
+
+		public Criteria andJudgeNotBetween(Integer value1, Integer value2) {
+			addCriterion("judge not between", value1, value2, "judge");
 			return (Criteria) this;
 		}
 	}
