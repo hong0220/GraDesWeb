@@ -18,4 +18,9 @@ public class WeiboUserServiceImpl implements WeiboUserServiceI {
 	public List<WeiboUser> get(Integer page, Integer size) {
 		return wd.get(page, size);
 	}
+
+	@Override
+	public List<WeiboUser> get(String user_id) {
+		return wd.get(user_id);
+	}
 }

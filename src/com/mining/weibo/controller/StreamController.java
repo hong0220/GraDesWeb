@@ -13,12 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mining.weibo.model.Weibo;
 import com.mining.weibo.service.WeiboServiceI;
+import com.mining.weibo.service.WeiboUserServiceI;
 import com.mining.weibo.utils.FastJsonUtil;
 
 @Controller
 public class StreamController {
 	@Resource
 	private WeiboServiceI ws;
+	@Resource
+	private WeiboUserServiceI wus;
 
 	@RequestMapping(value = "stream")
 	public String stream(HttpServletRequest request,
