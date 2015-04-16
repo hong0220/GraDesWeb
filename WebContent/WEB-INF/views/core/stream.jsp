@@ -105,9 +105,9 @@
 						// 时间转化
 						var unixTimestamp = new Date(weibo.createtime);
 						var commonTime = unixTimestamp
-								.pattern("yyyy-MM-dd");
+								.pattern("yyyy年MM月dd日");
 
-						html += "<div class='grid'><strong>作者ID: "
+						html += "<div class='grid'><strong>"
 								+ weibo.name
 								+ "</strong><p><font color='#FF0000'>"
 								+ weibo.content + "</font><br><p>时间: "

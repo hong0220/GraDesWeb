@@ -28,6 +28,8 @@ public class WeiboUserDaoImpl implements WeiboUserDaoI {
 	@Override
 	public List<WeiboUser> get(String user_id) {
 		WeiboUserExample wue = new WeiboUserExample();
+		wue.setStart(0);
+		wue.setLimit(1);
 		wue.or().andUserIdEqualTo(user_id);
 		return wm.selectByExample(wue);
 	}

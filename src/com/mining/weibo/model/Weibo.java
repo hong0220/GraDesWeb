@@ -3,63 +3,73 @@ package com.mining.weibo.model;
 import java.util.Date;
 
 public class Weibo {
-    private Integer id;
+	private Integer id;
 
-    private String userId;
+	private String userId;
 
-    private String content;
+	private String name;
 
-    private Date createtime;
+	private String content;
 
-    private String http;
+	private Date createtime;
 
-    private Integer judge;
+	private String http;
 
-    public Integer getId() {
-        return id;
-    }
+	private Integer judge;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public String getUserId() {
-        return userId;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
-    }
+	public String getUserId() {
+		return userId;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public void setUserId(String userId) {
+		this.userId = userId == null ? null : userId.trim();
+	}
 
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
-    }
+	public String getContent() {
+		return content;
+	}
 
-    public Date getCreatetime() {
-        return createtime;
-    }
+	public void setContent(String content) {
+		this.content = content == null ? null : content.trim();
+	}
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
-    }
+	public Date getCreatetime() {
+		return createtime;
+	}
 
-    public String getHttp() {
-        return http;
-    }
+	public void setCreatetime(Date createtime) {
+		this.createtime = createtime;
+	}
 
-    public void setHttp(String http) {
-        this.http = http == null ? null : http.trim();
-    }
+	public String getHttp() {
+		return http;
+	}
 
-    public Integer getJudge() {
-        return judge;
-    }
+	public void setHttp(String http) {
+		this.http = http == null ? null : http.trim();
+	}
 
-    public void setJudge(Integer judge) {
-        this.judge = judge;
-    }
+	public Integer getJudge() {
+		return judge;
+	}
+
+	public void setJudge(Integer judge) {
+		this.judge = judge;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }

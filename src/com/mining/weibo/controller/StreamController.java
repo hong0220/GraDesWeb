@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mining.weibo.model.Weibo;
+import com.mining.weibo.model.WeiboUser;
 import com.mining.weibo.service.WeiboServiceI;
 import com.mining.weibo.service.WeiboUserServiceI;
 import com.mining.weibo.utils.FastJsonUtil;
@@ -40,9 +41,14 @@ public class StreamController {
 		System.out.println(page);
 		System.out.println(size);
 
+		List<WeiboUser> weiboUserList = wus.get(userId);
+		System.out.println("name:" + weiboUserList.get(0).getName());
+
 		List<Weibo> list = ws.get(userId, page, size);
-		for (Weibo weibo : list) {
-			System.out.println(weibo);
+		for (int i = 0; i < list.size(); ++i) {
+			System.out.println(list.get(i).getUserId());
+
+			list.get(i).setName(weiboUserList.get(0).getName());
 		}
 		response.getWriter().write(FastJsonUtil.getJson(list));
 		// map.put("vo", list);

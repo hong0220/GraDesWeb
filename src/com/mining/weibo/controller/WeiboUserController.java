@@ -26,6 +26,7 @@ public class WeiboUserController {
 		List<WeiboUser> list = wus.get(0, 10);
 		for (WeiboUser weiboUser : list) {
 			System.out.println(weiboUser);
+
 		}
 		map.put("vo", list);
 		return "core/home";
