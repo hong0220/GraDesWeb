@@ -105,7 +105,7 @@
 					marginBottom : 40
 				},
 				title : {
-					text : '微博情感权值变化图',
+					text : '微博情感权值和上证综指涨跌变化图',
 					x : -30
 				},
 				xAxis : {
