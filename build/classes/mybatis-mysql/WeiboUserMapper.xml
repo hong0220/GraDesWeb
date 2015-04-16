@@ -24,7 +24,8 @@
 									and ${criterion.condition} #{criterion.value}
 								</when>
 								<when test="criterion.betweenValue">
-									and ${criterion.condition} #{criterion.value} and
+									and ${criterion.condition} #{criterion.value}
+									and
 									#{criterion.secondValue}
 								</when>
 								<when test="criterion.listValue">
@@ -56,7 +57,8 @@
 									and ${criterion.condition} #{criterion.value}
 								</when>
 								<when test="criterion.betweenValue">
-									and ${criterion.condition} #{criterion.value} and
+									and ${criterion.condition} #{criterion.value}
+									and
 									#{criterion.secondValue}
 								</when>
 								<when test="criterion.listValue">
@@ -90,7 +92,7 @@
 		<if test="orderByClause != null">
 			order by ${orderByClause}
 		</if>
-		<if test="start!=0 or limit!=0"> limit #{start},#{limit} </if>
+		<if test="start != null or limit != null"> limit #{start},#{limit} </if>
 	</select>
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
 		parameterType="java.lang.Integer">
@@ -100,7 +102,8 @@
 		where id = #{id,jdbcType=INTEGER}
 	</select>
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-		delete from weibo_user
+		delete from
+		weibo_user
 		where id = #{id,jdbcType=INTEGER}
 	</delete>
 	<delete id="deleteByExample" parameterType="com.mining.weibo.model.WeiboUserExample">
@@ -110,12 +113,15 @@
 		</if>
 	</delete>
 	<insert id="insert" parameterType="com.mining.weibo.model.WeiboUser">
-		insert into weibo_user (id, user_id, authority,
+		insert into weibo_user (id,
+		user_id, authority,
 		name, verify, fan,
 		post)
-		values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR},
+		values
+		(#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR},
 		#{authority,jdbcType=VARCHAR},
-		#{name,jdbcType=VARCHAR}, #{verify,jdbcType=VARCHAR}, #{fan,jdbcType=INTEGER},
+		#{name,jdbcType=VARCHAR},
+		#{verify,jdbcType=VARCHAR}, #{fan,jdbcType=INTEGER},
 		#{post,jdbcType=INTEGER})
 	</insert>
 	<insert id="insertSelective" parameterType="com.mining.weibo.model.WeiboUser">
@@ -206,11 +212,16 @@
 	<update id="updateByExample" parameterType="map">
 		update weibo_user
 		set id = #{record.id,jdbcType=INTEGER},
-		user_id = #{record.userId,jdbcType=VARCHAR},
-		authority = #{record.authority,jdbcType=VARCHAR},
-		name = #{record.name,jdbcType=VARCHAR},
-		verify = #{record.verify,jdbcType=VARCHAR},
-		fan = #{record.fan,jdbcType=INTEGER},
+		user_id =
+		#{record.userId,jdbcType=VARCHAR},
+		authority =
+		#{record.authority,jdbcType=VARCHAR},
+		name =
+		#{record.name,jdbcType=VARCHAR},
+		verify =
+		#{record.verify,jdbcType=VARCHAR},
+		fan =
+		#{record.fan,jdbcType=INTEGER},
 		post = #{record.post,jdbcType=INTEGER}
 		<if test="_parameter != null">
 			<include refid="Update_By_Example_Where_Clause" />
@@ -243,11 +254,14 @@
 	<update id="updateByPrimaryKey" parameterType="com.mining.weibo.model.WeiboUser">
 		update weibo_user
 		set user_id = #{userId,jdbcType=VARCHAR},
-		authority = #{authority,jdbcType=VARCHAR},
+		authority =
+		#{authority,jdbcType=VARCHAR},
 		name = #{name,jdbcType=VARCHAR},
-		verify = #{verify,jdbcType=VARCHAR},
+		verify =
+		#{verify,jdbcType=VARCHAR},
 		fan = #{fan,jdbcType=INTEGER},
-		post = #{post,jdbcType=INTEGER}
+		post =
+		#{post,jdbcType=INTEGER}
 		where id = #{id,jdbcType=INTEGER}
 	</update>
 </mapper>

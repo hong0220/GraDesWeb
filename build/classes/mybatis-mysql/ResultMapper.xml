@@ -91,6 +91,7 @@
 		<if test="orderByClause != null">
 			order by ${orderByClause}
 		</if>
+		<if test="start != null or limit != null"> limit #{start},#{limit} </if>
 	</select>
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
 		parameterType="java.lang.Integer">

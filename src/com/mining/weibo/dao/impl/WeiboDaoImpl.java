@@ -29,4 +29,10 @@ public class WeiboDaoImpl implements WeiboDaoI {
 	public List<Weibo> getAll(String userId) {
 		return null;
 	}
+
+	@Override
+	public List<Weibo> getAll(String start, String stop) {
+		WeiboExample we = new WeiboExample();
+		return null;
+	}
 }
