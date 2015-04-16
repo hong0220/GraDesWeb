@@ -29,7 +29,7 @@ public class WeiboDaoImpl implements WeiboDaoI {
 	}
 
 	@Override
-	public List<Weibo> getAll(String timeStart, String timeStop) {
+	public List<Weibo> getAll(String userId, String timeStart, String timeStop) {
 		WeiboExample we = new WeiboExample();
 
 		try {
@@ -39,8 +39,9 @@ public class WeiboDaoImpl implements WeiboDaoI {
 			// 结束时间
 			Date stop = DateTimeUtil.formatStr(timeStop + " 23:59:59",
 					"yyyy-MM-dd HH:mm:ss");
-			we.or().andCreatetimeGreaterThanOrEqualTo(start);
-			we.or().andCreatetimeLessThanOrEqualTo(stop);
+			we.or().andCreatetimeGreaterThanOrEqualTo(start)
+					.andCreatetimeLessThanOrEqualTo(stop)
+					.andUserIdEqualTo(userId);
 			return wm.selectByExample(we);
 		} catch (ParseException e) {
 			e.printStackTrace();

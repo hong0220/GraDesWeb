@@ -21,7 +21,7 @@ public class WeiboServiceImpl implements WeiboServiceI {
 	}
 
 	@Override
-	public List<Weibo> getAll(String start, String stop) {
-		return wd.getAll(start, stop);
+	public List<Weibo> getAll(String userId, String start, String stop) {
+		return wd.getAll(userId, start, stop);
 	}
 }

@@ -53,4 +53,14 @@ public class StreamController {
 		response.getWriter().write(FastJsonUtil.getJson(list));
 		// map.put("vo", list);
 	}
+
+	@RequestMapping(value = "bingtu")
+	public void get(HttpServletRequest request, HttpServletResponse response,
+			Map<String, Object> map, String userId) throws IOException {
+		List<Weibo> list = ws.getAll("2178865632", "2014-05-01", "2014-05-30");
+		System.out.println(list.size());
+		// for (Weibo weibo : list) {
+		// System.out.println(weibo);
+		// }
+	}
 }

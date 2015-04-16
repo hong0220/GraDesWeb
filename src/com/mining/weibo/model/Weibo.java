@@ -72,4 +72,11 @@ public class Weibo {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "Weibo [id=" + id + ", userId=" + userId + ", name=" + name
+				+ ", content=" + content + ", createtime=" + createtime
+				+ ", http=" + http + ", judge=" + judge + "]";
+	}
 }
