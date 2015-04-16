@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mining.weibo.model.Weibo;
 import com.mining.weibo.model.WeiboUser;
+import com.mining.weibo.model.vo.BingTu;
 import com.mining.weibo.service.WeiboServiceI;
 import com.mining.weibo.service.WeiboUserServiceI;
 import com.mining.weibo.utils.FastJsonUtil;
@@ -54,13 +55,24 @@ public class StreamController {
 		// map.put("vo", list);
 	}
 
-	@RequestMapping(value = "bingtu")
+	@RequestMapping(value = "bingTu")
 	public void get(HttpServletRequest request, HttpServletResponse response,
 			Map<String, Object> map, String userId) throws IOException {
-		List<Weibo> list = ws.getAll("2178865632", "2014-05-01", "2014-05-30");
+		List<Weibo> list = ws.getAll(userId, "2014-05-01", "2014-05-30");
 		System.out.println(list.size());
-		// for (Weibo weibo : list) {
-		// System.out.println(weibo);
-		// }
+		Integer ji = 0;
+		Integer xiao = 0;
+		Integer zhong = 0;
+		for (Weibo weibo : list) {
+			if (weibo.getJudge() == 1) {
+				ji++;
+			} else if (weibo.getJudge() == 0) {
+				zhong++;
+			} else if (weibo.getJudge() == -1) {
+				xiao++;
+			}
+		}
+		BingTu bt = new BingTu(ji, xiao, zhong);
+		response.getWriter().write(FastJsonUtil.getJson(bt));
 	}
 }

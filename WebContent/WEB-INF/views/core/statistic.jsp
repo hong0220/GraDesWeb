@@ -70,6 +70,20 @@
 			var percentChart;
 			$(document).ready(
 					function() {
+						setBingTu();
+						$.ajax({
+							type : "post",
+							url : "${ctx}/bingTu?userId="+userId,
+							dataType : "json",
+							contentType : "application/json;charset=utf-8",
+							success : function(data) {
+								var ji = data.ji;
+								var xiao = data.xiao;
+								var zhong = data.zhong;
+								setBingTu(ji,xiao,zhong);
+							}
+						});
+						
 						$.ajax({
 							type : "post",
 							url : "${ctx}/total?userId="+userId,
@@ -95,6 +109,52 @@
 						});
 					});
 		});
+		
+		function setBingTu(ji,xiao,zhong) {
+			percentChart = new Highcharts.Chart({
+	            chart: {
+	                renderTo: 'percentContainer',
+	                plotBackgroundColor: null,
+	                plotBorderWidth: null,
+	                plotShadow: false
+	            },
+	            title: {
+	                text: '微博情感倾向数量统计'
+	            },
+	            tooltip: {
+	        	    pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+	            	percentageDecimals: 1
+	            },
+	            plotOptions: {
+	                pie: {
+	                    allowPointSelect: true,
+	                    cursor: 'pointer',
+	                    dataLabels: {
+	                        enabled: true,
+	                        color: '#000000',
+	                        connectorColor: '#000000',
+	                        formatter: function() {
+	                            return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+	                        }
+	                    }
+	                }
+	            },
+	            series: [{
+	                type: 'pie',
+	                name: '数量百分比',
+	                data: [
+	                    ['积极微博数量',   ji],
+	                    ['消极微博数量',   xiao],
+	                    {
+	                        name: '中性微博数量',
+	                        y: zhong,
+	                        sliced: true,
+	                        selected: true
+	                    },
+	                ]
+	            }]
+	        });
+		}
 
 		function setTrendChart(day, jiji, xiaoji, zhangdie) {
 			numTrendChart = new Highcharts.Chart({
@@ -105,7 +165,7 @@
 					marginBottom : 40
 				},
 				title : {
-					text : '微博情感权值和上证综指涨跌变化图',
+					text : '微博情感权值和上证综指涨跌值变化图',
 					x : -30
 				},
 				xAxis : {
@@ -142,7 +202,7 @@
 					name : '消极情感的情感权值',
 					data : xiaoji
 				}, {
-					name : '股票涨跌情况',
+					name : '上证综指涨跌值',
 					data : zhangdie
 				} ]
 			});
