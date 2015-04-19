@@ -1,9 +1,10 @@
+// 相关性分析
 setwd("c:\\R")
 data<-read.csv("result.csv")
 test<-data.frame(data[2],data[3],data[4],data[5],data[6],data[7],data[8])
 round(cor(test),2)
 
-
+// 逻辑回归
 setwd("c:\\R")
 dat<-read.csv("result.csv")
 up=(dat$updown/abs(dat$updown)+1)/2

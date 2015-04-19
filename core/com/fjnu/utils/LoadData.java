@@ -34,16 +34,19 @@ public class LoadData {
 	}
 
 	public void dataToMap3() {
-		readLine("dic/net/deny/deny.txt", 0);
-		System.out.println("-----------");
-		readLine("dic/net/negative/new.txt", -1);
-		System.out.println("-----------");
-		readLine("dic/net/negative/negative.txt", -1);
+		// readLine("dic/net/deny/deny.txt", 0);
+		// System.out.println("-----------");
+
+		// readLine("dic/net/negative/new.txt", -1);
+		// System.out.println("-----------");
+		// readLine("dic/net/negative/negative.txt", -1);
+
 		System.out.println("-----------");
 		readLine("dic/net/positive/new.txt", 1);
 		System.out.println("-----------");
 		readLine("dic/net/positive/positive.txt", 1);
 		System.out.println("-----------");
+		System.out.println(map.size());
 	}
 
 	// 读取文本文件内容到HashMap中
